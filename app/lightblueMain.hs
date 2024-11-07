@@ -3,7 +3,7 @@
 
 import Options.Applicative hiding (style) --optparse-applicative
 --import Data.Semigroup ((<>))              --semigroup
-import Control.Monad (forM_)              --base
+import Control.Monad (forM)               --base
 import ListT (toList)                     --list-t
 import qualified Data.Text.Lazy as T      --text
 import qualified Data.Text.Lazy.IO as T   --text
@@ -30,6 +30,8 @@ import qualified DTS.DTTdeBruijn as DTT
 import DTS.TypeChecker (typeInfer,nullProver)
 import qualified DTS.QueryTypes as QT
 import qualified DTS.NaturalLanguageInference as NLI
+import qualified JSeM as JSeM                         --jsem
+import qualified ML.Exp.Classification.Bounded as NLP --nlp-tools
 
 data Options =
   Version
@@ -214,7 +216,7 @@ jsemOptionParser = JSeM
     <> metavar "text|tex|xml|html"
     <> help "How many data to process: 0 means all data"
     <> showDefault
-    <> value 0
+    <> value (-1)
     <> metavar "INT" )  
 
 numerationOptionParser :: Parser Command
@@ -257,13 +259,13 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
     lightblueMainLocal (Parse output style proverName) lr contents = do
       let handle = S.stdout
           parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
-          prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Intuitionistic)
+          prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
           posTagOnly = case output of 
                          I.TREE -> False
                          I.POSTAG -> True
       S.hPutStrLn handle $ I.headerOf style
-      NLI.printMoreSentenceOrInference handle style noTypeCheck posTagOnly parseResult
+      NLI.printParseResult handle style 1 noTypeCheck posTagOnly parseResult
       S.hPutStrLn handle $ I.footerOf style
     --
     -- | JSeM Parser
@@ -272,20 +274,28 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
       parsedJSeM <- J.xml2jsemData $ T.toStrict contents
       let handle = S.stdout
           parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
-          prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Intuitionistic)
+          prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
           parsedJSeM'
             | nSample < 0 = parsedJSeM
             | otherwise = take nSample parsedJSeM
       S.hPutStrLn handle $ I.headerOf style
-      forM_ parsedJSeM' $ \j -> do
+      pairs <- forM parsedJSeM' $ \j -> do
         mapM_ T.putStr ["[JSeM id: ", T.fromStrict $ J.jsem_id j, "] "]
         mapM_ StrictT.putStr $ J.premises j
-        S.putStr "==>"
+        S.putStr " ==> "
         StrictT.putStrLn $ J.hypothesis j
+        S.putStr "\n"
         let sentences = reverse $ (T.fromStrict $ J.hypothesis j):(map T.fromStrict $ J.premises j)
             parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] sentences
-        NLI.printMoreSentenceOrInference handle style noTypeCheck False parseResult
-        S.putStrLn $ "Ground truth: " ++ (show $ J.answer j)
+        NLI.printParseResult handle style 1 noTypeCheck False parseResult
+        inferenceLabels <- toList $ NLI.trawlParseResult parseResult
+        let groundTruth = J.jsemLabel2YesNo $ J.answer j
+            prediction = case inferenceLabels of
+              [] -> J.Other
+              (bestLabel:_) -> bestLabel
+        S.putStrLn $ "\nPrediction: " ++ (show prediction) ++ "\nGround truth: " ++ (show groundTruth) ++ "\n"
+        return (prediction, groundTruth)
+      T.putStrLn $ T.fromStrict $ NLP.showClassificationReport pairs
       S.hPutStrLn handle $ I.footerOf style
     -- | 
     -- | Numeration
@@ -363,7 +373,7 @@ test = do
       termA = UDTT.Sigma (UDTT.Con "entity") (UDTT.App (UDTT.Con "f") (UDTT.Var 0))
       -- typeA = DTS.Kind
       tcq = UDTT.TypeInferQuery signature context termA 
-      pss = QT.ProofSearchSetting Nothing Nothing (Just QT.Intuitionistic)
+      pss = QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
   typeCheckResults <- toList $ typeInfer (nullProver pss) False tcq
   T.putStrLn $ T.toText $ head typeCheckResults
   --T.hPutStrLn S.stderr $ T.toText $ DTS.Judgment context (DTS.Var 0) DTS.Type
