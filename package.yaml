@@ -56,8 +56,9 @@ library:
   - Parser.Language.Japanese.Lexicon
   - Parser.Language.Japanese.MyLexicon
   - Parser.Language.Japanese.Templates
+  - Parser.Language.Japanese.FilterNodes
   - Parser.Language.Japanese.Juman.CallJuman
-  - Parser.Language.Japanese.Juman.Config  
+  - Parser.Language.Japanese.Juman.Config
   - Parser.Language.Japanese.Juman.ParseJumanDic
   - Parser.Language.Japanese.Juman.ParseCaseFrame
   - Parser.Language.Japanese.Juman.ConvertJumanDic
@@ -99,7 +100,7 @@ executables:
     main:         buildLexicon.hs
     ghc-options:  [-threaded, -rtsopts, -with-rtsopts=-N]
     dependencies: lightblue
-    
+
 tests:
   testJumanDicSettings:
     source-dirs:  test/Juman

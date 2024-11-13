@@ -19,6 +19,7 @@ import qualified Data.Time as Time        --time
 import qualified Parser.ChartParser as CP
 import qualified Parser.Language.Japanese.Lexicon as LEX
 import qualified Parser.Language.Japanese.MyLexicon as LEX
+import qualified Parser.Language.Japanese.FilterNodes as LEX
 import qualified Parser.Language.Japanese.Juman.CallJuman as Juman
 import Parser.Language (jpOptions)
 import qualified Interface as I
@@ -32,6 +33,7 @@ import qualified DTS.QueryTypes as QT
 import qualified DTS.NaturalLanguageInference as NLI
 import qualified JSeM as JSeM                         --jsem
 import qualified ML.Exp.Classification.Bounded as NLP --nlp-tools
+
 
 data Options =
   Version
@@ -60,7 +62,7 @@ data Command =
 
 -- | Main function.  Check README.md for the usage.
 main :: IO()
-main = customExecParser p opts >>= lightblueMain 
+main = customExecParser p opts >>= lightblueMain
   where opts = info (helper <*> optionParser)
                  ( fullDesc
                  <> progDesc "Usage: lightblue COMMAND <local options> <global options>"
@@ -71,21 +73,21 @@ main = customExecParser p opts >>= lightblueMain
 -- <*> :: Parser (a -> b) -> Parser a -> Parser b
 
 optionParser :: Parser Options
-optionParser = 
-  flag' Version ( long "version" 
-                <> short 'v' 
+optionParser =
+  flag' Version ( long "version"
+                <> short 'v'
                 <> help "Print the lightblue version" )
-  <|> 
-  flag' Stat ( long "stat" 
+  <|>
+  flag' Stat ( long "stat"
              <> help "Print the lightblue statistics" )
-  <|> 
+  <|>
   flag' Test ( long "test"
-             <> hidden 
+             <> hidden
              <> internal
              <> help "Execute the test code" )
-  <|> 
+  <|>
   Options
-    <$> subparser 
+    <$> subparser
       (command "parse"
            (info parseOptionParser
                  (progDesc "Local options: [-o|--output tree|postag] [-s|--style html|text|tex|xml] [--noTypeCheck] [--noInference] [-p|--prover wani|null] (The default values: -o tree -s html -p wani)" ))
@@ -113,11 +115,11 @@ optionParser =
       )
     -- <*> option auto
     --   ( long "input"
-    --     <> short 'i' 
+    --     <> short 'i'
     --     <> metavar "sentences|jsem"
     --     <> value SENTENCES
     --     <> help "Specify input type (default: sentences)" )
-    <*> strOption 
+    <*> strOption
       ( long "file"
       <> short 'f'
       <> metavar "FILEPATH"
@@ -126,48 +128,48 @@ optionParser =
       <> value "-" )
     <*> option auto
       ( long "ma"
-        <> short 'm' 
+        <> short 'm'
         <> metavar "juman|jumanpp|kwja"
         <> value Juman.KWJA
         <> help "Specify morphological analyzer (default: KWJA)" )
-    <*> option auto 
+    <*> option auto
       ( long "beam"
       <> short 'b'
       <> help "Specify the beam width"
       <> showDefault
       <> value 32
       <> metavar "INT" )
-    <*> option auto 
+    <*> option auto
       ( long "nparse"
       -- <> short 'n'
       <> help "Show N-best parse trees for each sentence"
       <> showDefault
       <> value (-1)
       <> metavar "INT" )
-    <*> option auto 
+    <*> option auto
       ( long "ntypecheck"
       -- <> short 'n'
       <> help "Show N-best type check diagram for each logical form"
       <> showDefault
       <> value (-1)
       <> metavar "INT" )
-    <*> option auto 
+    <*> option auto
       ( long "nproof"
       -- <> short 'n'
       <> help "Show N-best proof diagram for each proof search"
       <> showDefault
       <> value (-1)
       <> metavar "INT" )
-    <*> switch 
+    <*> switch
       ( long "noTypeCheck"
       <> help "If True, execute no type checking for LFs" )
-    <*> switch 
+    <*> switch
       ( long "noInference"
       <> help "If true, execute no inference" )
-    <*> switch 
+    <*> switch
       ( long "time"
       <> help "Show the execution time in stderr" )
-    <*> switch 
+    <*> switch
       ( long "verbose"
       <> help "Show logs of type inferer and type checker" )
 
@@ -217,7 +219,7 @@ jsemOptionParser = JSeM
     <> help "How many data to process: 0 means all data"
     <> showDefault
     <> value (-1)
-    <> metavar "INT" )  
+    <> metavar "INT" )
 
 numerationOptionParser :: Parser Command
 numerationOptionParser = Numeration
@@ -258,10 +260,12 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
     -- |
     lightblueMainLocal (Parse output style proverName) lr contents = do
       let handle = S.stdout
-          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
+          filterBlacklist = Just $ LEX.createFilterFrom LEX.blacklist
+          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing filterBlacklist noInference verbose
+          -- parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
           prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
-          posTagOnly = case output of 
+          posTagOnly = case output of
                          I.TREE -> False
                          I.POSTAG -> True
       S.hPutStrLn handle $ I.headerOf style
@@ -269,7 +273,7 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
       S.hPutStrLn handle $ I.footerOf style
     --
     -- | JSeM Parser
-    -- 
+    --
     lightblueMainLocal (JSeM style proverName nSample) lr contents = do
       parsedJSeM <- J.xml2jsemData $ T.toStrict contents
       let handle = S.stdout
@@ -297,9 +301,9 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
         return (prediction, groundTruth)
       T.putStrLn $ T.fromStrict $ NLP.showClassificationReport pairs
       S.hPutStrLn handle $ I.footerOf style
-    -- | 
+    -- |
     -- | Numeration
-    -- | 
+    -- |
     lightblueMainLocal (Numeration style) lr contents = do
       let handle = S.stdout
           sentences = T.lines contents
@@ -320,7 +324,7 @@ lightblueMain (Options commands filepath morphaName beamW nParse nTypeCheck nPro
     -- lightblueMainLocal (Debug _ _) contents = do
     --   parsedJSeM <- J.xml2jsemData $ T.toStrict contents
     --   let sentences = T.lines contents
-    --   forM_ () $ 
+    --   forM_ () $
     --     (\(_,sentence) -> do
     --       chart <- CP.parse (CP.ParseSetting jpOptions morphaName beamW nParse nTypeCheck nProof True Nothing Nothing False False) sentence
     --       --let filterednodes = concat $ map snd $ filter (\((x,y),_) -> i <= x && y <= j) $ M.toList chart
@@ -365,14 +369,14 @@ showStat = do
   putStrLn " lexical entries for open words from JUMAN++"
 
 -- | lightblue --test
--- | 
+-- |
 test :: IO()
 test = do
   let signature = [("entity", DTT.Type), ("evt",DTT.Type), ("f", DTT.Pi (DTT.Con "entity") DTT.Type)]
       context = [(DTT.Con "dog")]
       termA = UDTT.Sigma (UDTT.Con "entity") (UDTT.App (UDTT.Con "f") (UDTT.Var 0))
       -- typeA = DTS.Kind
-      tcq = UDTT.TypeInferQuery signature context termA 
+      tcq = UDTT.TypeInferQuery signature context termA
       pss = QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
   typeCheckResults <- toList $ typeInfer (nullProver pss) False tcq
   T.putStrLn $ T.toText $ head typeCheckResults
@@ -421,13 +425,13 @@ parseSentence ps beamW score sentence = do
   T.putStrLn sentence
   chart <- CP.parse ps sentence
   case CP.extractParseResult beamW chart of
-    CP.Full nodes -> 
+    CP.Full nodes ->
        do
        T.putStrLn $ T.toText $ head $ nodes
-       T.putStr $ T.concat ["Fully parsed, Full:Partial:Failed = ", T.pack (show $ i+1), ":", T.pack (show j), ":", T.pack (show k), ", Full/Total = ", T.pack (show $ i+1), "/", T.pack (show $ total+1), " ("] 
+       T.putStr $ T.concat ["Fully parsed, Full:Partial:Failed = ", T.pack (show $ i+1), ":", T.pack (show j), ":", T.pack (show k), ", Full/Total = ", T.pack (show $ i+1), "/", T.pack (show $ total+1), " ("]
        S.putStrLn $ percent (i+1,total+1) ++ "%)\n"
        return (i+1,j,k,total+1)
-    CP.Partial nodes -> 
+    CP.Partial nodes ->
        do
        T.putStrLn $ T.toText $ head $ nodes
        T.putStr $ T.concat ["Partially parsed, Full:Partial:Failed = ", T.pack (show i), ":", T.pack (show $ j+1), ":", T.pack (show k), ", Full/Total = ", T.pack (show $ i+1), "/", T.pack (show $ total+1), " ("]
