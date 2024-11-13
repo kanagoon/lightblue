@@ -32,6 +32,6 @@ createFilterFrom blacklist i j nodes =
 createFilterFrom' :: [T.Text] -> [CCG.Node] -> [CCG.Node]
 createFilterFrom' _ [] = []
 createFilterFrom' blacklist (c:cs) =
-    if (TL.toStrict $ CCG.pf c) `elem` blacklist
+    if (CCG.rs c == CCG.LEX) && (TL.toStrict $ CCG.pf c) `elem` blacklist
         then createFilterFrom' blacklist cs
     else c : createFilterFrom' blacklist cs
