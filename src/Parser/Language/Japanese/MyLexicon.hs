@@ -131,6 +131,13 @@ emptyCategories = [
   ec "rel-ext" "(670)+" 96
               ((N `SL` N) `BS` (S [F anyPos, F[Attr], F[P,M],F[P,M],F[P,M],F[M],F[M]]))
               ((Lam (Lam (Lam (Lam (Sigma (App (App (Var 2) (Var 1)) (Var 0)) (Sigma (App (Var 4) (Lam Top)) (Sigma (Pi Entity (Pi Entity Type)) (App (App (Var 0) (Var 1)) (Var 4))))))))),[]),
+  -- glue-element
+  ec "glue-element-by" "glue-element" 99
+              ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) 
+              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "＃by") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), []),
+  ec "glue-element-parallel" "glue-element" 99
+              ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) 
+              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "＃paralle") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), []),
   -- 連用節、ヨウニ節、テ節
   ec "cont-mod" "new" 99
               ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]++adjective++nomPred), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) (conjunctionSR "cont"),
