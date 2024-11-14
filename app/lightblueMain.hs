@@ -75,21 +75,6 @@ main = customExecParser p opts >>= lightblueMain
 -- <*> :: Parser (a -> b) -> Parser a -> Parser b
 
 optionParser :: Parser Options
-<<<<<<< HEAD
-optionParser =
-  flag' Version ( long "version"
-                <> short 'v'
-                <> help "Print the lightblue version" )
-  <|>
-  flag' Stat ( long "stat"
-             <> help "Print the lightblue statistics" )
-  <|>
-  flag' Test ( long "test"
-             <> hidden
-             <> internal
-             <> help "Execute the test code" )
-  <|>
-=======
 optionParser = 
   -- flag' Version ( long "version" 
   --               <> short 'v' 
@@ -105,7 +90,6 @@ optionParser =
   --            <> internal
   --            <> help "Execute the test code" )
   -- <|> 
->>>>>>> upstream/master
   Options
     <$> subparser
       (command "parse"
@@ -148,9 +132,6 @@ optionParser =
     --     <> metavar "sentences|jsem"
     --     <> value SENTENCES
     --     <> help "Specify input type (default: sentences)" )
-<<<<<<< HEAD
-    <*> strOption
-=======
     <*> option auto
       ( long "style"
       <> short 's'
@@ -159,7 +140,6 @@ optionParser =
       <> showDefault
       <> value I.HTML )
     <*> strOption 
->>>>>>> upstream/master
       ( long "file"
       <> short 'f'
       <> metavar "FILEPATH"
@@ -200,9 +180,6 @@ optionParser =
       <> showDefault
       <> value (-1)
       <> metavar "INT" )
-<<<<<<< HEAD
-    <*> switch
-=======
     <*> option auto 
       ( long "maxdepth"
       <> help "Set the maximum search depth in proof search"
@@ -210,7 +187,6 @@ optionParser =
       <> value 9
       <> metavar "INT" )
     <*> switch 
->>>>>>> upstream/master
       ( long "noTypeCheck"
       <> help "If True, execute no type checking for LFs" )
     <*> switch
@@ -257,28 +233,10 @@ jsemOptionParser = JSeM
       <> help "Skip JSeM data the JSeM ID of which is not equial to this value")
   <*> option auto
     ( long "nsample"
-<<<<<<< HEAD
-    <> metavar "text|tex|xml|html"
-    <> help "How many data to process: 0 means all data"
-    <> showDefault
-    <> value (-1)
-    <> metavar "INT" )
-
-numerationOptionParser :: Parser Command
-numerationOptionParser = Numeration
-  <$> option auto
-    ( long "style"
-    <> short 's'
-    <> metavar "text|tex|xml|html"
-    <> help "Print results in the specified format"
-    <> showDefault
-    <> value I.HTML )
-=======
       <> showDefault
       <> value (-1)
       <> metavar "INT"
       <> help "How many data to process")
->>>>>>> upstream/master
 
 -- debugOptionParser :: Parser Command
 -- debugOptionParser = Debug
@@ -309,15 +267,8 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     -- |
     lightblueMainLocal (Parse output proverName) lr contents = do
       let handle = S.stdout
-<<<<<<< HEAD
-          filterBlacklist = Just $ LEX.createFilterFrom LEX.blacklist
-          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing filterBlacklist noInference verbose
-          -- parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
-          prover = NLI.getProver proverName $ QT.ProofSearchSetting Nothing Nothing (Just QT.Classical)
-=======
           parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
           prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) Nothing (Just QT.Classical)
->>>>>>> upstream/master
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
           posTagOnly = case output of
                          I.TREE -> False
@@ -327,13 +278,8 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
       S.hPutStrLn handle $ I.footerOf style
     --
     -- | JSeM Parser
-<<<<<<< HEAD
-    --
-    lightblueMainLocal (JSeM style proverName nSample) lr contents = do
-=======
     -- 
     lightblueMainLocal (JSeM proverName jsemID nSample) lr contents = do
->>>>>>> upstream/master
       parsedJSeM <- J.xml2jsemData $ T.toStrict contents
       let parsedJSeM'
             | jsemID == "all" = parsedJSeM
@@ -366,13 +312,8 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
       S.hPutStrLn handle $ I.footerOf style
     -- |
     -- | Numeration
-<<<<<<< HEAD
-    -- |
-    lightblueMainLocal (Numeration style) lr contents = do
-=======
     -- | 
     lightblueMainLocal Numeration lr contents = do
->>>>>>> upstream/master
       let handle = S.stdout
           sentences = T.lines contents
       S.hPutStrLn handle $ I.headerOf style

@@ -134,10 +134,10 @@ emptyCategories = [
   -- glue-element
   ec "glue-element-by" "glue-element" 99
               ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) 
-              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "＃by") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), []),
+              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "#by") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), [("#by", DTT.Pi DTT.Entity (DTT.Pi DTT.Entity (DTT.Pi DTT.Entity DTT.Type)))]),
   ec "glue-element-parallel" "glue-element" 99
               ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) 
-              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "＃paralle") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), []),
+              ((Lam (Lam (Lamvec (Lam (Sigma Entity (App (Appvec 2 (Var 4)) (Lam (App (Appvec 3 (Var 4)) (Lam (Sigma (App (App (App (Con "#paralle") (Var 2)) (Var 0)) (Var 1)) ( App (Var 4) (Var 3)))))))))))), [("#paralle", DTT.Pi DTT.Entity (DTT.Pi DTT.Entity (DTT.Pi DTT.Entity DTT.Type)))]),
   -- 連用節、ヨウニ節、テ節
   ec "cont-mod" "new" 99
               ((T False 1 modifiableS `SL` T False 1 modifiableS) `BS` (S [F ([V5k, V5s, V5t, V5n, V5m, V5r, V5w, V5g, V5z, V5b, V5IKU, V5YUK, V5ARU, V5NAS, V5TOW, V1, VS, VSN, VZ]++adjective++nomPred), F[Cont], F[M],F[P,M],F[P,M],F[M],F[M]])) (conjunctionSR "cont"),
