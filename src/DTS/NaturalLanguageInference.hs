@@ -27,6 +27,7 @@ module DTS.NaturalLanguageInference (
 import Control.Monad (when,forM_,join)    --base
 import Control.Monad.State (lift)         --mtl
 import Control.Monad.IO.Class (liftIO)    --base
+import Control.Applicative ((<|>))          --base
 import qualified System.IO as S           --base
 import qualified Data.Char as C           --base
 import qualified Data.Text.Lazy as T      --text
@@ -122,9 +123,11 @@ parseWithTypeCheck ps prover signtr contxt (text:texts) =
     -- |               =take n=>         ListT IO CCG.Node
     node <- takeNbest (CP.nParse ps) $ join $ fmap fromFoldable $ lift $ CP.simpleParse ps text 
     let signtr' = L.nub $ (CCG.sig node) ++ signtr
-        tcQuery = UDTT.Judgment signtr' contxt (CCG.sem node) DTT.Type
-    return $ ParseTreeAndFelicityChecks node signtr' tcQuery $ do
-               tcDiagram <- takeNbest (CP.nTypeCheck ps) $ TY.typeCheck prover (CP.verbose ps) tcQuery
+        tcQueryType = UDTT.Judgment signtr' contxt (CCG.sem node) DTT.Type
+        tcQueryKind = UDTT.Judgment signtr' contxt (CCG.sem node) DTT.Kind
+    return $ ParseTreeAndFelicityChecks node signtr' tcQueryType $ do
+               tcDiagram <- takeNbest (CP.nTypeCheck ps) $ (TY.typeCheck prover (CP.verbose ps) tcQueryType)
+                                                           <|> (TY.typeCheck prover (CP.verbose ps) tcQueryKind)
                let contxt' = (DTT.trm $ Tree.node tcDiagram):contxt
                return (tcDiagram, parseWithTypeCheck ps prover signtr' contxt' texts)
 
@@ -136,44 +139,53 @@ takeNbest n l
   | otherwise = l
  
 -- | prints a CCG node (=i-th parsing result for a given sentence) in a specified style (=HTML|text|XML|TeX)
-printParseResult :: S.Handle -> Style -> Int -> Bool -> Bool -> ParseResult -> IO ()
-printParseResult h style sid noTypeCheck posTagOnly (SentenceAndParseTrees sentence parseTrees) = do
-    T.hPutStrLn h $ T.concat["[Sentence ", T.pack $ show sid, ": ", sentence, "]\n"]
+printParseResult :: S.Handle -> Style -> Int -> Bool -> Bool -> String -> ParseResult -> IO ()
+printParseResult h style sid noTypeCheck posTagOnly title (SentenceAndParseTrees sentence parseTrees) = do
+    let title' = "Sentence " ++ (show sid)
+    T.hPutStrLn h $ T.concat["[", T.pack title', " of ", T.pack title, ": ", sentence, "]\n"]
     parseTrees' <- toList parseTrees 
     -- | [ParseTreeAndFelicityChecks CCG.Node UDTT.TypeCheckQuery (ListT IO FelicityCheckAndMore) ]
     forM_ (zip parseTrees' ([1..]::[Int])) $ \((ParseTreeAndFelicityChecks node signtr tcQuery tcResults),ith) -> do
-      S.hPutStrLn h $ interimOf style $ "[parse " ++ (show ith) ++ ": score=" ++ (T.unpack $ CCG.showScore node) ++ "]"
+      let title'' = "Parse tree " ++ (show ith) ++ " of " ++ title'
+      S.hPutStrLn h $ interimOf style $ "[" ++ title'' ++ ": score=" ++ (T.unpack $ CCG.showScore node) ++ "]"
       T.hPutStrLn h $ T.concat ["PF = ", CCG.pf node]
       if posTagOnly
         then do
           posTagger h style node
         else do
           T.hPutStrLn h $ printer style node
-          S.hPutStrLn h $ interimOf style $ "[Signature for parse " ++ (show ith) ++ "]"
+          S.hPutStrLn h $ interimOf style $ "[Signature for " ++ title'' ++ "]"
           T.hPutStrLn h $ printer style $ DTTwN.fromDeBruijnSignature signtr
-          S.hPutStrLn h $ interimOf style $ "[Type check query for parse " ++ (show ith) ++ "]"
+          S.hPutStrLn h "\n"
+          S.hPutStrLn h $ interimOf style $ "[Type check query for " ++ title'' ++ "]"
           T.hPutStrLn h $ printer style $ UDTTwN.fromDeBruijnJudgment tcQuery
       tcResults' <- toList tcResults
       --S.putStrLn $ (show $ length tcResults') ++ " results."
       forM_ (zip tcResults' ([1..]::[Int])) $ \((tcDiagram, moreResult),jth) -> do
         when (not (noTypeCheck || posTagOnly)) $ do
-          S.hPutStrLn h $ interimOf style $ "[Type check diagram " ++ (show jth) ++ " for parse " ++ (show ith) ++ "]"
+          let title''' = "Type check diagram " ++ (show jth) ++ " of " ++ title''
+          S.hPutStrLn h "\n"
+          S.hPutStrLn h $ interimOf style $ "[" ++ title''' ++ "]"
           T.hPutStrLn h $ printer style $ fmap DTTwN.fromDeBruijnJudgment tcDiagram
-        printParseResult h style (sid+1) noTypeCheck posTagOnly moreResult
-printParseResult h style _ _ _ (InferenceResults (QueryAndDiagrams psqPos proofDiagramsPos) (QueryAndDiagrams psqNeg proofDiagramsNeg)) = do
+        printParseResult h style (sid+1) noTypeCheck posTagOnly title moreResult
+printParseResult h style _ _ _ title (InferenceResults (QueryAndDiagrams psqPos proofDiagramsPos) (QueryAndDiagrams psqNeg proofDiagramsNeg)) = do
+  S.hPutStrLn h $ interimOf style $ "[Positive proof search query for " ++ title ++ "]"
   T.hPutStrLn h $ printer style $ DTTwN.fromDeBruijnProofSearchQuery psqPos
   proofDiagramsPos' <- toList proofDiagramsPos
   S.hPutStrLn h $ (show $ length proofDiagramsPos') ++ " proof diagrams found\n"
   forM_ (zip proofDiagramsPos' ([1..]::[Int])) $ \(proofDiagram,kth) -> do
-    S.hPutStrLn h $ interimOf style $ "[Proof diagram " ++ (show kth) ++ "]"
+    let title' = "Proof diagram " ++ (show kth) ++ " for " ++ title
+    S.hPutStrLn h $ interimOf style $ "[" ++ title' ++ "]"
     T.hPutStrLn h $ printer style $ fmap DTTwN.fromDeBruijnJudgment proofDiagram
+  S.hPutStrLn h $ interimOf style $ "[Negative proof search query for " ++ title ++ "]"
   T.hPutStrLn h $ printer style $ DTTwN.fromDeBruijnProofSearchQuery psqNeg
   proofDiagramsNeg' <- toList proofDiagramsNeg
   S.hPutStrLn h $ (show $ length proofDiagramsNeg') ++ " proof diagrams found"
   forM_ (zip proofDiagramsNeg' ([1..]::[Int])) $ \(proofDiagram,kth) -> do
-    S.hPutStrLn h $ interimOf style $ "[Proof diagram " ++ (show kth) ++ "]"
+    let title' = "Proof diagram " ++ (show kth) ++ " for the negation of " ++ title
+    S.hPutStrLn h $ interimOf style $ "[" ++ title' ++ "]"
     T.hPutStrLn h $ printer style $ fmap DTTwN.fromDeBruijnJudgment proofDiagram
-printParseResult _ _ _ _ _ NoSentence = return () -- S.hPutStrLn h $ interimOf style "[End of discourse]" 
+printParseResult _ _ _ _ _ _ NoSentence = return () -- S.hPutStrLn h $ interimOf style "[End of discourse]" 
 
 printer :: (SimpleText a, Typeset a, MathML a) => Style -> a -> T.Text
 printer TEXT = toText

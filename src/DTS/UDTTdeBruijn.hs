@@ -1,4 +1,4 @@
-{-# LANGUAGE FlexibleInstances, DeriveGeneric #-}
+{-# LANGUAGE FlexibleInstances, DeriveGeneric, DeriveAnyClass, TemplateHaskell #-}
 
 {-|
 Copyright   : (c) Daisuke Bekki, 2024
@@ -38,10 +38,10 @@ module DTS.UDTTdeBruijn (
   , TypeInferQuery(..)
   ) where
 
-import qualified GHC.Generics        as G --base
+import qualified GHC.Generics as G    --base
 import qualified Data.Text.Lazy as T  --text
 import Data.Store (Store(..))         --store
---import qualified Codec.Serialise as S --serialise
+import Data.Store.TH (makeStore)      --store
 import Interface.Text                 --lightblue
 import Interface.TeX                  --lightblue
 import Interface.HTML                 --lightblue
@@ -50,7 +50,7 @@ import qualified DTS.DTTdeBruijn  as DTTdB  --lightblue
 -- import qualified DTS.UDTTwithName as UDTTwN --lightblue
 
 -- | 'Proj' 'Fst' m is the first projection of m, while 'Proj' 'Snd' m is the second projection of m.
-data Selector = Fst | Snd deriving (Eq, Show)
+data Selector = Fst | Snd deriving (Eq, Show, G.Generic, Store)
 
 -- | Print a selector as "1" or "2".
 instance SimpleText Selector where
@@ -102,8 +102,13 @@ data Preterm =
   | Asp Preterm                 -- ^ Underspesified terms
   | Lamvec Preterm              -- ^ Lambda abstractions of a variable vector
   | Appvec Int Preterm          -- ^ Function applications of a variable vector
+  | Ann Preterm DTTdB.Preterm         -- ^ Type annotation
   -- | ToDo: add First Universe
   deriving (Eq, G.Generic)
+
+instance Store Preterm
+
+-- makeStore ''T.Text
 
 instance Show Preterm where
   show = T.unpack . toText
@@ -141,6 +146,7 @@ instance SimpleText Preterm where
     Asp m -> T.concat["@", toText m]
     Lamvec m   -> T.concat ["λ+.", toText m]
     Appvec i m -> T.concat ["(", toText m, " ", T.pack (show i), "+)"]
+    Ann m a -> T.concat ["(", toText m, "::", toText a, ")"]
 
 -- | translates a DTS preterm into a tex source code.
 instance Typeset Preterm where
@@ -186,6 +192,7 @@ subst preterm l i = case preterm of
   Asp m      -> Asp (subst m l i)
   Lamvec m   -> Lamvec (subst m (shiftIndices l 1 0) (i+1))
   Appvec j m -> Appvec j (subst m l i)
+  Ann m a    -> Ann (subst m l i) a
 
 -- | shiftIndices m d i
 -- add d to all the indices that is greater than or equal to i within m (=d-place shift)
@@ -214,6 +221,7 @@ shiftIndices preterm d i = case preterm of
   Appvec j m -> if j >= i
                    then Appvec (j+d) (shiftIndices m d i)
                    else Appvec j (shiftIndices m d i)
+  Ann m a    -> Ann (shiftIndices m d i) a
   m -> m
   
 
@@ -230,14 +238,14 @@ betaReduce preterm = case preterm of
   Lam m  -> Lam (betaReduce m)
   App m n -> case betaReduce m of
     Lam v -> betaReduce (shiftIndices (subst v (shiftIndices n 1 0) 0) (-1) 0)
+    (Ann (Lam v) _) -> betaReduce (shiftIndices (subst v (shiftIndices n 1 0) 0) (-1) 0)
     e -> App e (betaReduce n)
   Not a  -> Not (betaReduce a)
   Sigma a b -> Sigma (betaReduce a) (betaReduce b)
   Pair m n  -> Pair (betaReduce m) (betaReduce n)
   Proj s m  -> case betaReduce m of
-    Pair x y -> case s of
-                  Fst -> x
-                  Snd -> y
+    Pair x y -> case s of Fst -> x; Snd -> y
+    (Ann (Pair x y) _) -> case s of Fst -> x; Snd -> y
     e -> Proj s e
   Disj a b -> Disj (betaReduce a) (betaReduce b)
   Iota s m -> Iota s (betaReduce m)
@@ -264,6 +272,7 @@ betaReduce preterm = case preterm of
   Asp m -> Asp (betaReduce m)
   Lamvec m   -> Lamvec (betaReduce m)
   Appvec i m -> Appvec i (betaReduce m)
+  Ann m a -> Ann (betaReduce m) a
 
 -- | strong Beta reduction
 strongBetaReduce :: Int -> Preterm -> Preterm
@@ -278,14 +287,14 @@ strongBetaReduce t preterm = case preterm of
                else Lam (strongBetaReduce 0 m)
   App m n -> case strongBetaReduce (t+1) m of
     Lam v -> strongBetaReduce t (shiftIndices (subst v (shiftIndices n 1 0) 0) (-1) 0)
+    (Ann (Lam v) _) -> strongBetaReduce t (shiftIndices (subst v (shiftIndices n 1 0) 0) (-1) 0)
     e -> App e (strongBetaReduce 0 n)
   Not a  -> Not (strongBetaReduce 0 a)
   Sigma a b -> Sigma (strongBetaReduce 0 a) (strongBetaReduce 0 b)
   Pair m n  -> Pair (strongBetaReduce 0 m) (strongBetaReduce 0 n)
   Proj s m  -> case strongBetaReduce 0 m of
-    Pair x y -> case s of
-                  Fst -> x
-                  Snd -> y
+    Pair x y -> case s of Fst -> x; Snd -> y
+    (Ann (Pair x y) _) -> case s of Fst -> x; Snd -> y
     e -> Proj s e
   Disj a b -> Disj (strongBetaReduce 0 a) (strongBetaReduce 0 b)
   Iota s m -> Iota s (strongBetaReduce 0 m)
@@ -314,6 +323,7 @@ strongBetaReduce t preterm = case preterm of
                    then Lam (strongBetaReduce (t-1) $ Lamvec (addLambda 0 m))
                    else strongBetaReduce 0 (deleteLambda 0 m)
   Appvec i m -> Appvec i (strongBetaReduce 0 m)
+  Ann m a -> Ann (strongBetaReduce 0 m) a
 
 -- | eliminates nested Sigma constructions from a given preterm
 sigmaElimination :: Preterm -> Preterm
@@ -340,6 +350,7 @@ sigmaElimination preterm = case preterm of
   Asp m      -> Asp (sigmaElimination m)
   Lamvec m   -> Lamvec (sigmaElimination m)
   Appvec j m -> Appvec j (sigmaElimination m)
+  Ann m a    -> Ann (sigmaElimination m) a
   m -> m
 
 -- | adds two preterms (of type `Nat`).
@@ -382,6 +393,7 @@ addLambda i preterm = case preterm of
   Appvec j m | j > i     -> Appvec (j+1) (addLambda i m)
              | j < i     -> Appvec j (addLambda i m)
              | otherwise -> Appvec j (App (addLambda i m) (Var (j+1)))
+  Ann m a    -> Ann (addLambda i m) a
   m -> m -- identity function for 0-ary constructors
 
 -- | deleteLambda i preterm: the second subroutine for 'transvec' function,
@@ -411,6 +423,7 @@ deleteLambda i preterm = case preterm of
   Appvec j m | j > i     -> Appvec (j-1) (deleteLambda i m)
              | j < i     -> Appvec j (deleteLambda i m)
              | otherwise -> deleteLambda i m
+  Ann m a    -> Ann (deleteLambda i m) a
   m -> m -- identity function for 0-ary constructors
 
 -- | replaceLambda i preterm: the third subroutine for 'transvec' function,
@@ -524,6 +537,7 @@ toDTT preterm = case preterm of
   Asp _   -> Nothing
   Lamvec _  -> Nothing
   Appvec _ _ -> Nothing
+  Ann _ _ -> Nothing
 
 -- {- Judgment of UDTT in de Bruijn notation -}
 
@@ -536,7 +550,7 @@ data Judgment = Judgment {
   , contxt :: DTTdB.Context  -- ^ A context \Gamma in \Gamma \vdash M:A
   , trm :: Preterm     -- ^ A term M in \Gamma \vdash M:A
   , typ :: DTTdB.Preterm     -- ^ A type A in \Gamma \vdash M:A
-  } deriving (Eq)
+  } deriving (Eq, G.Generic)
 
 embedJudgment :: Judgment -> GeneralTypeQuery DTTdB.Signature DTTdB.Context Preterm DTTdB.Preterm
 embedJudgment (Judgment sig cxt trm typ) = GeneralTypeQuery sig cxt (Term trm) (Term typ)
@@ -549,6 +563,7 @@ instance Typeset Judgment where
   toTeX = toTeX . embedJudgment
 instance MathML Judgment where
   toMathML = toMathML . embedJudgment
+instance Store Judgment
 
 toUDTTJudgment :: DTTdB.Judgment -> Judgment
 toUDTTJudgment (DTTdB.Judgment signtr contxt dttTerm typ) = Judgment signtr contxt (toUDTT dttTerm) typ
