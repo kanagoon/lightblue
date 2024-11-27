@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE jsem-dataset SYSTEM "jsem.dtd">
+<?xml-stylesheet type="text/xsl" href="jsem.xsl"?>
+<jsem-dataset>
+
+<!--並列関係-->
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b01" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が泣き叫んだ</script>
+    </p>
+    <h>
+      <script>太郎が泣いた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b02" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が泣き叫んだ</script>
+    </p>
+    <h>
+      <script>太郎が泣かなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b03" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が泣き叫んだ</script>
+    </p>
+    <h>
+      <script>太郎が叫んだ</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b04" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が泣き叫んだ</script>
+    </p>
+    <h>
+      <script>太郎が叫ばなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b05" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が泣いた</script>
+    </p>
+    <p idx="2">
+      <script>太郎が叫んだ</script>
+    </p>
+    <h>
+      <script>太郎が泣き叫んだ</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b06" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描いた</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b07" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描いた</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思わなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b08" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描いた</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描いた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b09" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描いた</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描かなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b10" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思った</script>
+    </p>
+    <p idx="2">
+      <script>太郎が将来の夢を描いた</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思い描いた</script>
+    </h>
+    <note></note>
+  </problem>
+
+<!--右側主要部の関係-->
+<!--全体の項構造が２の項構造と等しい-->
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b11" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がドアを押し開けた</script>
+    </p>
+    <h>
+      <script>太郎がドアを押した</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b12" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がドアを押し開けた</script>
+    </p>
+    <h>
+      <script>太郎がドアを押さなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b13" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がドアを押し開けた</script>
+    </p>
+    <h>
+      <script>太郎がドアを開けた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b14" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がドアを押し開けた</script>
+    </p>
+    <h>
+      <script>太郎がドアを開けなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b15" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がドアを押した</script>
+    </p>
+    <p idx="2">
+      <script>太郎がドアを開けた</script>
+    </p>
+    <h>
+      <script>太郎がドアを押し開けた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b16" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が木を切り倒した</script>
+    </p>
+    <h>
+      <script>太郎が木を切った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b17" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が木を切り倒した</script>
+    </p>
+    <h>
+      <script>太郎が木を切らなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b18" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が木を切り倒した</script>
+    </p>
+    <h>
+      <script>太郎が木を倒した</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b19" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が木を切り倒した</script>
+    </p>
+    <h>
+      <script>太郎が木を倒さなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b20" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が木を切った</script>
+    </p>
+    <p idx="2">
+      <script>太郎が木を倒した</script>
+    </p>
+    <h>
+      <script>太郎が木を切り倒した</script>
+    </h>
+    <note></note>
+  </problem>
+<!--V1とV2の内部引数は所有関係を持つ-->
+
+
+
+
+<!--全体の項構造がV1とV2の両方から受け継がれる-->
+
+
+
+
+
+<!--補文関係-->
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b11" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が本を書き上げた</script>
+    </p>
+    <h>
+      <script>太郎が本を書いた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b12" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が本を書き上げた</script>
+    </p>
+    <h>
+      <script>太郎が本を書かなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b13" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が本を書き上げた</script>
+    </p>
+    <h>
+      <script>太郎が本を上げた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b14" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が本を書き上げた</script>
+    </p>
+    <h>
+      <script>太郎が本を書き上げなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b15" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が本を書いた</script>
+    </p>
+    <p idx="2">
+      <script>太郎が本を上げた</script>
+    </p>
+    <h>
+      <script>太郎が本を書き上げた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b11" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が歌を歌い終えた</script>
+    </p>
+    <h>
+      <script>太郎が歌を歌った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b12" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が歌を歌い終えた</script>
+    </p>
+    <h>
+      <script>太郎が歌を歌わなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b13" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が歌を歌い終えた</script>
+    </p>
+    <h>
+      <script>太郎が歌を終えた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b14" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が歌を歌い終えた</script>
+    </p>
+    <h>
+      <script>太郎が歌を終えなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b15" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が歌を歌った</script>
+    </p>
+    <p idx="2">
+      <script>太郎が歌を終えた</script>
+    </p>
+    <h>
+      <script>太郎が歌を歌い終えた</script>
+    </h>
+    <note></note>
+  </problem>
+
+</jsem-dataset>
