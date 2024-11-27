@@ -278,19 +278,361 @@
     <note></note>
   </problem>
 <!--V1とV2の内部引数は所有関係を持つ-->
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b21" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が服を洗った</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b22" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が服を洗わなかった</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b23" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が汚れを落とした</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b24" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が汚れを落とさなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b25" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が汚れを洗った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b26" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服の汚れを洗い落とした</script>
+    </p>
+    <h>
+      <script>太郎が汚れを洗わなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b27" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が服を洗った</script>
+    </p>
+    <p idx="2">
+      <script>太郎が汚れを落とした</script>
+    </p>
+    <h>
+      <script>太郎が服の汚れを洗い落とした</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b28" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎がビンを振った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b29" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎がビンを振らなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b30" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎が中身を混ぜた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b31" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎が中身を混ぜなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b32" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎が中身を振った</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b33" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎が中身を振らなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b34" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎がビンを混ぜた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b35" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </p>
+    <h>
+      <script>太郎がビンを混ぜなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b36" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎がビンを振った</script>
+    </p>
+    <p idx="2">
+      <script>太郎が中身を混ぜた</script>
+    </p>
+    <h>
+      <script>太郎がビンの中身を振り混ぜた</script>
+    </h>
+    <note></note>
+  </problem>
 
 <!--全体の項構造がV1とV2の両方から受け継がれる-->
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b37" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩いた</script>
+    </p>
+    <h>
+      <script>太郎が酒を飲んだ</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b38" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩いた</script>
+    </p>
+    <h>
+      <script>太郎が酒を飲まなかった</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b39" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩いた</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を歩いた</script>
+    </h>
+    <note></note>
+  </problem>
 
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b40" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩いた</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を歩かなかった</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b41" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が酒を飲んだ</script>
+    </p>
+    <p idx="2">
+      <script>太郎が夜の街を歩いた</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を酒を飲み歩いた</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b42" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </p>
+    <h>
+      <script>太郎が思い出を語る</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b43" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </p>
+    <h>
+      <script>太郎が思い出を語らない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b44" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を明かす</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b45" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を明かさない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b46" language="jp"
+  phenomena="CompoundVerb">
+    <description>《basic example》</description>
+    <p idx="1">
+      <script>太郎が思い出を語る</script>
+    </p>
+    <p idx="2">
+      <script>太郎が夏の一夜を明かす</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </h>
+    <note></note>
+  </problem>
 
 
 <!--補文関係-->
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b11" language="jp"
+  jsem_id="b47" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -303,7 +645,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b12" language="jp"
+  jsem_id="b48" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -316,7 +658,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b13" language="jp"
+  jsem_id="b49" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -329,7 +671,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b50" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -342,7 +684,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b15" language="jp"
+  jsem_id="b51" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -358,7 +700,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b11" language="jp"
+  jsem_id="b52" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -371,7 +713,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b12" language="jp"
+  jsem_id="b53" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -384,7 +726,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b13" language="jp"
+  jsem_id="b54" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -397,7 +739,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b55" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
@@ -410,7 +752,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b15" language="jp"
+  jsem_id="b56" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
