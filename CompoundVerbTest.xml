@@ -9,10 +9,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が泣き叫んだ</script>
+      <script>太郎が泣き叫ぶ</script>
     </p>
     <h>
-      <script>太郎が泣いた</script>
+      <script>太郎が泣く</script>
     </h>
     <note></note>
   </problem>
@@ -22,10 +22,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が泣き叫んだ</script>
+      <script>太郎が泣き叫ぶ</script>
     </p>
     <h>
-      <script>太郎が泣かなかった</script>
+      <script>太郎が泣かない</script>
     </h>
     <note></note>
   </problem>
@@ -35,10 +35,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が泣き叫んだ</script>
+      <script>太郎が泣き叫ぶ</script>
     </p>
     <h>
-      <script>太郎が叫んだ</script>
+      <script>太郎が叫ぶ</script>
     </h>
     <note></note>
   </problem>
@@ -48,10 +48,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が泣き叫んだ</script>
+      <script>太郎が泣き叫ぶ</script>
     </p>
     <h>
-      <script>太郎が叫ばなかった</script>
+      <script>太郎が叫ばない</script>
     </h>
     <note></note>
   </problem>
@@ -61,13 +61,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が泣いた</script>
+      <script>太郎が泣く</script>
     </p>
     <p idx="2">
-      <script>太郎が叫んだ</script>
+      <script>太郎が叫ぶ</script>
     </p>
     <h>
-      <script>太郎が泣き叫んだ</script>
+      <script>太郎が泣き叫ぶ</script>
     </h>
     <note></note>
   </problem>
@@ -77,10 +77,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が将来の夢を思い描いた</script>
+      <script>太郎が将来の夢を思い描く</script>
     </p>
     <h>
-      <script>太郎が将来の夢を思った</script>
+      <script>太郎が将来の夢を思う</script>
     </h>
     <note></note>
   </problem>
@@ -90,10 +90,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が将来の夢を思い描いた</script>
+      <script>太郎が将来の夢を思い描く</script>
     </p>
     <h>
-      <script>太郎が将来の夢を思わなかった</script>
+      <script>太郎が将来の夢を思わない</script>
     </h>
     <note></note>
   </problem>
@@ -103,10 +103,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が将来の夢を思い描いた</script>
+      <script>太郎が将来の夢を思い描く</script>
     </p>
     <h>
-      <script>太郎が将来の夢を描いた</script>
+      <script>太郎が将来の夢を描く</script>
     </h>
     <note></note>
   </problem>
@@ -116,10 +116,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が将来の夢を思い描いた</script>
+      <script>太郎が将来の夢を思い描く</script>
     </p>
     <h>
-      <script>太郎が将来の夢を描かなかった</script>
+      <script>太郎が将来の夢を描かない</script>
     </h>
     <note></note>
   </problem>
@@ -129,13 +129,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が将来の夢を思った</script>
+      <script>太郎が将来の夢を思う</script>
     </p>
     <p idx="2">
-      <script>太郎が将来の夢を描いた</script>
+      <script>太郎が将来の夢を描く</script>
     </p>
     <h>
-      <script>太郎が将来の夢を思い描いた</script>
+      <script>太郎が将来の夢を思い描く</script>
     </h>
     <note></note>
   </problem>
@@ -147,10 +147,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がドアを押し開けた</script>
+      <script>太郎がドアを押し開ける</script>
     </p>
     <h>
-      <script>太郎がドアを押した</script>
+      <script>太郎がドアを押す</script>
     </h>
     <note></note>
   </problem>
@@ -160,10 +160,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がドアを押し開けた</script>
+      <script>太郎がドアを押し開ける</script>
     </p>
     <h>
-      <script>太郎がドアを押さなかった</script>
+      <script>太郎がドアを押さない</script>
     </h>
     <note></note>
   </problem>
@@ -173,10 +173,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がドアを押し開けた</script>
+      <script>太郎がドアを押し開ける</script>
     </p>
     <h>
-      <script>太郎がドアを開けた</script>
+      <script>太郎がドアを開ける</script>
     </h>
     <note></note>
   </problem>
@@ -186,10 +186,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がドアを押し開けた</script>
+      <script>太郎がドアを押し開ける</script>
     </p>
     <h>
-      <script>太郎がドアを開けなかった</script>
+      <script>太郎がドアを開けない</script>
     </h>
     <note></note>
   </problem>
@@ -199,13 +199,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がドアを押した</script>
+      <script>太郎がドアを押す</script>
     </p>
     <p idx="2">
-      <script>太郎がドアを開けた</script>
+      <script>太郎がドアを開ける</script>
     </p>
     <h>
-      <script>太郎がドアを押し開けた</script>
+      <script>太郎がドアを押し開ける</script>
     </h>
     <note></note>
   </problem>
@@ -215,10 +215,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が木を切り倒した</script>
+      <script>太郎が木を切り倒す</script>
     </p>
     <h>
-      <script>太郎が木を切った</script>
+      <script>太郎が木を切る</script>
     </h>
     <note></note>
   </problem>
@@ -228,10 +228,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が木を切り倒した</script>
+      <script>太郎が木を切り倒す</script>
     </p>
     <h>
-      <script>太郎が木を切らなかった</script>
+      <script>太郎が木を切らない</script>
     </h>
     <note></note>
   </problem>
@@ -241,10 +241,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が木を切り倒した</script>
+      <script>太郎が木を切り倒す</script>
     </p>
     <h>
-      <script>太郎が木を倒した</script>
+      <script>太郎が木を倒す</script>
     </h>
     <note></note>
   </problem>
@@ -254,10 +254,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が木を切り倒した</script>
+      <script>太郎が木を切り倒す</script>
     </p>
     <h>
-      <script>太郎が木を倒さなかった</script>
+      <script>太郎が木を倒さない</script>
     </h>
     <note></note>
   </problem>
@@ -267,13 +267,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が木を切った</script>
+      <script>太郎が木を切る</script>
     </p>
     <p idx="2">
-      <script>太郎が木を倒した</script>
+      <script>太郎が木を倒す</script>
     </p>
     <h>
-      <script>太郎が木を切り倒した</script>
+      <script>太郎が木を切り倒す</script>
     </h>
     <note></note>
   </problem>
@@ -283,10 +283,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が服を洗った</script>
+      <script>太郎が服を洗う</script>
     </h>
     <note></note>
   </problem>
@@ -296,10 +296,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が服を洗わなかった</script>
+      <script>太郎が服を洗わない</script>
     </h>
     <note></note>
   </problem>
@@ -309,10 +309,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が汚れを落とした</script>
+      <script>太郎が汚れを落とす</script>
     </h>
     <note></note>
   </problem>
@@ -322,10 +322,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が汚れを落とさなかった</script>
+      <script>太郎が汚れを落とさない</script>
     </h>
     <note></note>
   </problem>
@@ -335,10 +335,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が汚れを洗った</script>
+      <script>太郎が汚れを洗う</script>
     </h>
     <note></note>
   </problem>
@@ -348,10 +348,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </p>
     <h>
-      <script>太郎が汚れを洗わなかった</script>
+      <script>太郎が汚れを洗わない</script>
     </h>
     <note></note>
   </problem>
@@ -361,13 +361,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が服を洗った</script>
+      <script>太郎が服を洗う</script>
     </p>
     <p idx="2">
-      <script>太郎が汚れを落とした</script>
+      <script>太郎が汚れを落とす</script>
     </p>
     <h>
-      <script>太郎が服の汚れを洗い落とした</script>
+      <script>太郎が服の汚れを洗い落とす</script>
     </h>
     <note></note>
   </problem>
@@ -377,10 +377,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎がビンを振った</script>
+      <script>太郎がビンを振る</script>
     </h>
     <note></note>
   </problem>
@@ -390,10 +390,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎がビンを振らなかった</script>
+      <script>太郎がビンを振らない</script>
     </h>
     <note></note>
   </problem>
@@ -403,10 +403,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎が中身を混ぜた</script>
+      <script>太郎が中身を混ぜる</script>
     </h>
     <note></note>
   </problem>
@@ -416,10 +416,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎が中身を混ぜなかった</script>
+      <script>太郎が中身を混ぜない</script>
     </h>
     <note></note>
   </problem>
@@ -429,10 +429,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎が中身を振った</script>
+      <script>太郎が中身を振る</script>
     </h>
     <note></note>
   </problem>
@@ -442,10 +442,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎が中身を振らなかった</script>
+      <script>太郎が中身を振らない</script>
     </h>
     <note></note>
   </problem>
@@ -455,10 +455,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎がビンを混ぜた</script>
+      <script>太郎がビンを混ぜる</script>
     </h>
     <note></note>
   </problem>
@@ -468,10 +468,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </p>
     <h>
-      <script>太郎がビンを混ぜなかった</script>
+      <script>太郎がビンを混ぜない</script>
     </h>
     <note></note>
   </problem>
@@ -481,13 +481,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎がビンを振った</script>
+      <script>太郎がビンを振る</script>
     </p>
     <p idx="2">
-      <script>太郎が中身を混ぜた</script>
+      <script>太郎が中身を混ぜる</script>
     </p>
     <h>
-      <script>太郎がビンの中身を振り混ぜた</script>
+      <script>太郎がビンの中身を振り混ぜる</script>
     </h>
     <note></note>
   </problem>
@@ -498,10 +498,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が夜の街を酒を飲み歩いた</script>
+      <script>太郎が夜の街を酒を飲み歩く</script>
     </p>
     <h>
-      <script>太郎が酒を飲んだ</script>
+      <script>太郎が酒を飲む</script>
     </h>
     <note></note>
   </problem>
@@ -511,10 +511,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が夜の街を酒を飲み歩いた</script>
+      <script>太郎が夜の街を酒を飲み歩く</script>
     </p>
     <h>
-      <script>太郎が酒を飲まなかった</script>
+      <script>太郎が酒を飲まない</script>
     </h>
     <note></note>
   </problem>
@@ -524,10 +524,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が夜の街を酒を飲み歩いた</script>
+      <script>太郎が夜の街を酒を飲み歩く</script>
     </p>
     <h>
-      <script>太郎が夜の街を歩いた</script>
+      <script>太郎が夜の街を歩く</script>
     </h>
     <note></note>
   </problem>
@@ -537,10 +537,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が夜の街を酒を飲み歩いた</script>
+      <script>太郎が夜の街を酒を飲み歩く</script>
     </p>
     <h>
-      <script>太郎が夜の街を歩かなかった</script>
+      <script>太郎が夜の街を歩かない</script>
     </h>
     <note></note>
   </problem>
@@ -550,13 +550,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が酒を飲んだ</script>
+      <script>太郎が酒を飲む</script>
     </p>
     <p idx="2">
-      <script>太郎が夜の街を歩いた</script>
+      <script>太郎が夜の街を歩く</script>
     </p>
     <h>
-      <script>太郎が夜の街を酒を飲み歩いた</script>
+      <script>太郎が夜の街を酒を飲み歩く</script>
     </h>
     <note></note>
   </problem>
@@ -636,10 +636,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が本を書き上げた</script>
+      <script>太郎が本を書き上げる</script>
     </p>
     <h>
-      <script>太郎が本を書いた</script>
+      <script>太郎が本を書く</script>
     </h>
     <note></note>
   </problem>
@@ -649,10 +649,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が本を書き上げた</script>
+      <script>太郎が本を書き上げる</script>
     </p>
     <h>
-      <script>太郎が本を書かなかった</script>
+      <script>太郎が本を書かない</script>
     </h>
     <note></note>
   </problem>
@@ -662,10 +662,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が本を書き上げた</script>
+      <script>太郎が本を書き上げる</script>
     </p>
     <h>
-      <script>太郎が本を上げた</script>
+      <script>太郎が本を上げる</script>
     </h>
     <note></note>
   </problem>
@@ -675,10 +675,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が本を書き上げた</script>
+      <script>太郎が本を書き上げる</script>
     </p>
     <h>
-      <script>太郎が本を書き上げなかった</script>
+      <script>太郎が本を上げない</script>
     </h>
     <note></note>
   </problem>
@@ -688,13 +688,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が本を書いた</script>
+      <script>太郎が本を書く</script>
     </p>
     <p idx="2">
-      <script>太郎が本を上げた</script>
+      <script>太郎が本を上げる</script>
     </p>
     <h>
-      <script>太郎が本を書き上げた</script>
+      <script>太郎が本を書き上げる</script>
     </h>
     <note></note>
   </problem>
@@ -704,10 +704,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
+      <script>太郎が歌を歌い終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌った</script>
+      <script>太郎が歌を歌う</script>
     </h>
     <note></note>
   </problem>
@@ -717,10 +717,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
+      <script>太郎が歌を歌い終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌わなかった</script>
+      <script>太郎が歌を歌わない</script>
     </h>
     <note></note>
   </problem>
@@ -730,10 +730,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
+      <script>太郎が歌を歌い終える</script>
     </p>
     <h>
-      <script>太郎が歌を終えた</script>
+      <script>太郎が歌を終える</script>
     </h>
     <note></note>
   </problem>
@@ -743,10 +743,10 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
+      <script>太郎が歌を歌い終える</script>
     </p>
     <h>
-      <script>太郎が歌を終えなかった</script>
+      <script>太郎が歌を終えない</script>
     </h>
     <note></note>
   </problem>
@@ -756,13 +756,13 @@
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌った</script>
+      <script>太郎が歌を歌う</script>
     </p>
     <p idx="2">
-      <script>太郎が歌を終えた</script>
+      <script>太郎が歌を終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌い終えた</script>
+      <script>太郎が歌を歌い終える</script>
     </h>
     <note></note>
   </problem>
