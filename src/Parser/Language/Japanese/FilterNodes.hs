@@ -15,7 +15,8 @@ import qualified System.IO as S
 
 blacklist :: [T.Text]
 blacklist = [
-    "泣き叫"
+    "泣き叫",
+    "思い描"
     ]
 
 filterBlackListParseSetting :: IO LB.ParseSetting

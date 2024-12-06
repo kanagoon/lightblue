@@ -2,71 +2,15 @@
 <!DOCTYPE jsem-dataset SYSTEM "jsem.dtd">
 <?xml-stylesheet type="text/xsl" href="jsem.xsl"?>
 <jsem-dataset>
-<!--並列関係-->
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b11" language="jp"
-  phenomena="CompoundVerb">
-    <description>《basic example》</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
-    </p>
-    <h>
-      <script>太郎が歌を歌った</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
   jsem_id="b12" language="jp"
   phenomena="CompoundVerb">
     <description>《basic example》</description>
     <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
+      <script>ITELは1993年にMTALKを作った。</script>
     </p>
     <h>
-      <script>太郎が歌を歌わなかった</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b13" language="jp"
-  phenomena="CompoundVerb">
-    <description>《basic example》</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
-    </p>
-    <h>
-      <script>太郎が歌を終えた</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
-  phenomena="CompoundVerb">
-    <description>《basic example》</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終えた</script>
-    </p>
-    <h>
-      <script>太郎が歌を終えなかった</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b15" language="jp"
-  phenomena="CompoundVerb">
-    <description>《basic example》</description>
-    <p idx="1">
-      <script>太郎が歌を歌った</script>
-    </p>
-    <p idx="2">
-      <script>太郎が歌を終えた</script>
-    </p>
-    <h>
-      <script>太郎が歌を歌い終えた</script>
+      <script>ITELは1993年にMTALKを作り終えた。</script>
     </h>
     <note></note>
   </problem>
