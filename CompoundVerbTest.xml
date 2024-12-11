@@ -55,7 +55,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b04" language="jp"
+  jsem_id="b05" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -68,7 +68,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b04" language="jp"
+  jsem_id="b06" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -81,7 +81,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b04" language="jp"
+  jsem_id="b07" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -94,7 +94,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b04" language="jp"
+  jsem_id="b08" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -107,7 +107,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b05" language="jp"
+  jsem_id="b09" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -123,7 +123,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b05" language="jp"
+  jsem_id="b10" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
     <p idx="1">
@@ -139,150 +139,14 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b06" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描く</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思う</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b07" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描く</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思わない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b08" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描く</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を描く</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b09" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描く</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を描かない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b09" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描かない</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思う</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b09" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描かない</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思わない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b09" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描かない</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を描く</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b09" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思い描かない</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を描かない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b10" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思う</script>
-    </p>
-    <p idx="2">
-      <script>太郎が将来の夢を描く</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思い描く</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b10" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、並列関係</description>
-    <p idx="1">
-      <script>太郎が将来の夢を思わない</script>
-    </p>
-    <p idx="2">
-      <script>太郎が将来の夢を描かない</script>
-    </p>
-    <h>
-      <script>太郎が将来の夢を思い描かない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
   jsem_id="b11" language="jp"
   phenomena="CompoundVerb">
-    <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
+    <description>影山1993、並列関係</description>
     <p idx="1">
-      <script>太郎がドアを押し開ける</script>
+      <script>太郎が将来の夢を思い描く</script>
     </p>
     <h>
-      <script>太郎がドアを押す</script>
+      <script>太郎が将来の夢を思う</script>
     </h>
     <note></note>
   </problem>
@@ -290,6 +154,142 @@
   <problem answer="no" inference_type="entailment"
   jsem_id="b12" language="jp"
   phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描く</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思わない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b13" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描く</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描く</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b14" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描く</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b15" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描かない</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思う</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b16" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描かない</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思わない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b17" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描かない</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描く</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b18" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思い描かない</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を描かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b19" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思う</script>
+    </p>
+    <p idx="2">
+      <script>太郎が将来の夢を描く</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思い描く</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b20" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、並列関係</description>
+    <p idx="1">
+      <script>太郎が将来の夢を思わない</script>
+    </p>
+    <p idx="2">
+      <script>太郎が将来の夢を描かない</script>
+    </p>
+    <h>
+      <script>太郎が将来の夢を思い描かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b21" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
+    <p idx="1">
+      <script>太郎がドアを押し開ける</script>
+    </p>
+    <h>
+      <script>太郎がドアを押す</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b22" language="jp"
+  phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
       <script>太郎がドアを押し開ける</script>
@@ -301,7 +301,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b13" language="jp"
+  jsem_id="b23" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -314,7 +314,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b24" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -327,7 +327,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b25" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -340,7 +340,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b26" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -353,7 +353,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b27" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -366,7 +366,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b14" language="jp"
+  jsem_id="b28" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -379,7 +379,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b15" language="jp"
+  jsem_id="b29" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -395,7 +395,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b15" language="jp"
+  jsem_id="b30" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -411,7 +411,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b16" language="jp"
+  jsem_id="b31" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -424,7 +424,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b17" language="jp"
+  jsem_id="b32" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -437,7 +437,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b18" language="jp"
+  jsem_id="b33" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -450,7 +450,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b19" language="jp"
+  jsem_id="b34" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -463,7 +463,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b19" language="jp"
+  jsem_id="b35" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -476,7 +476,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b19" language="jp"
+  jsem_id="b36" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -489,7 +489,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b19" language="jp"
+  jsem_id="b37" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -502,7 +502,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b19" language="jp"
+  jsem_id="b38" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -515,7 +515,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b20" language="jp"
+  jsem_id="b39" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -531,7 +531,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b20" language="jp"
+  jsem_id="b40" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
     <p idx="1">
@@ -547,7 +547,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b21" language="jp"
+  jsem_id="b41" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -560,7 +560,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b22" language="jp"
+  jsem_id="b42" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -573,7 +573,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b23" language="jp"
+  jsem_id="b43" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -586,7 +586,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b24" language="jp"
+  jsem_id="b44" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -599,7 +599,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b25" language="jp"
+  jsem_id="b45" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -612,7 +612,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b46" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -625,7 +625,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b47" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -638,7 +638,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b48" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -651,7 +651,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b49" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -664,7 +664,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b50" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -677,7 +677,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b51" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -690,7 +690,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b26" language="jp"
+  jsem_id="b52" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -703,7 +703,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b27" language="jp"
+  jsem_id="b53" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -719,7 +719,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b27" language="jp"
+  jsem_id="b54" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -735,7 +735,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b28" language="jp"
+  jsem_id="b55" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -748,7 +748,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b29" language="jp"
+  jsem_id="b56" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -761,7 +761,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b30" language="jp"
+  jsem_id="b57" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -774,7 +774,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b31" language="jp"
+  jsem_id="b58" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -787,7 +787,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b32" language="jp"
+  jsem_id="b59" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -800,7 +800,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b33" language="jp"
+  jsem_id="b60" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -813,7 +813,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b34" language="jp"
+  jsem_id="b61" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -827,7 +827,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b35" language="jp"
+  jsem_id="b62" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -840,7 +840,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b36" language="jp"
+  jsem_id="b63" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -856,7 +856,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b37" language="jp"
+  jsem_id="b64" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -869,7 +869,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b38" language="jp"
+  jsem_id="b65" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -882,7 +882,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b39" language="jp"
+  jsem_id="b66" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -895,7 +895,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b40" language="jp"
+  jsem_id="b67" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -908,7 +908,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b41" language="jp"
+  jsem_id="b68" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -924,7 +924,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b42" language="jp"
+  jsem_id="b69" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -937,7 +937,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b43" language="jp"
+  jsem_id="b70" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -950,7 +950,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b44" language="jp"
+  jsem_id="b71" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -963,7 +963,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b45" language="jp"
+  jsem_id="b72" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -976,7 +976,7 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b46" language="jp"
+  jsem_id="b73" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -991,277 +991,244 @@
     <note></note>
   </problem>
 
-<!--補文関係、ここから保留-->
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b47" language="jp"
+  jsem_id="b74" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が本を書き上げる</script>
+      <script>太郎がレポートを書き始める</script>
     </p>
     <h>
-      <script>太郎が本を書く</script>
+      <script>太郎がレポートを書く</script>
     </h>
     <note></note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b48" language="jp"
+  jsem_id="b75" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が本を書き上げる</script>
+      <script>太郎がレポートを書き始める</script>
     </p>
     <h>
-      <script>太郎が本を書かない</script>
+      <script>太郎がレポートを書かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b76" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始める</script>
+    </p>
+    <h>
+      <script>太郎がレポートを始める</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b77" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始める</script>
+    </p>
+    <h>
+      <script>太郎がレポートを始めない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b78" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始めない</script>
+    </p>
+    <h>
+      <script>太郎がレポートを書く</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b79" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始めない</script>
+    </p>
+    <h>
+      <script>太郎がレポートを書かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b80" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始めない</script>
+    </p>
+    <h>
+      <script>太郎がレポートを始める</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b81" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がレポートを書き始めない</script>
+    </p>
+    <h>
+      <script>太郎がレポートを始めない</script>
     </h>
     <note></note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b49" language="jp"
+  jsem_id="b82" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が本を書き上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を上げる</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b50" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書き上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を上げない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b51" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書く</script>
+      <script>太郎がレポートを書く</script>
     </p>
     <p idx="2">
-      <script>太郎が本を上げる</script>
+      <script>太郎がレポートを始める</script>
     </p>
     <h>
-      <script>太郎が本を書き上げる</script>
+      <script>太郎がレポートを書き始める</script>
     </h>
-    <note></note>
+    <note>unkでいいのか</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b52" language="jp"
+  jsem_id="b83" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が歌を歌い終える</script>
+      <script>太郎がマラソンを走り終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌う</script>
+      <script>太郎がマラソンを走る</script>
     </h>
     <note></note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b53" language="jp"
+  jsem_id="b84" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が歌を歌い終える</script>
+      <script>太郎がマラソンを走り終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌わない</script>
+      <script>太郎がマラソンを走らない</script>
     </h>
     <note></note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b54" language="jp"
+  jsem_id="b85" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が歌を歌い終える</script>
+      <script>太郎がマラソンを走り終える</script>
     </p>
     <h>
-      <script>太郎が歌を終える</script>
+      <script>太郎がマラソンを終える</script>
     </h>
-    <note>「歌い終える」の歌はentity、「終える」の歌はevent</note>
+    <note></note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b55" language="jp"
+  jsem_id="b86" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が歌を歌い終える</script>
+      <script>太郎がマラソンを走り終える</script>
     </p>
     <h>
-      <script>太郎が歌を終えない</script>
+      <script>太郎がマラソンを終えない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b87" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がマラソンを走り終えない</script>
+    </p>
+    <h>
+      <script>太郎がマラソンを走る</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b88" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がマラソンを走り終えない</script>
+    </p>
+    <h>
+      <script>太郎がマラソンを走らない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="no" inference_type="entailment"
+  jsem_id="b89" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がマラソンを走り終えない</script>
+    </p>
+    <h>
+      <script>太郎がマラソンを終える</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="yes" inference_type="entailment"
+  jsem_id="b90" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、補文関係</description>
+    <p idx="1">
+      <script>太郎がマラソンを走り終えない</script>
+    </p>
+    <h>
+      <script>太郎がマラソンを終えない</script>
     </h>
     <note></note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b56" language="jp"
+  jsem_id="b91" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、補文関係</description>
     <p idx="1">
-      <script>太郎が歌を歌う</script>
+      <script>太郎がマラソンを走る</script>
     </p>
     <p idx="2">
-      <script>太郎が歌を終える</script>
+      <script>太郎がマラソンを終える</script>
     </p>
     <h>
-      <script>太郎が歌を歌い終える</script>
+      <script>太郎がマラソンを走り終える</script>
     </h>
-    <note>2、太郎が伴奏で参加？「マラソンを走り終える」でやり直す</note>
-  </problem>
-<!--補文関係、ここまで保留-->
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b47" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が鳥を見逃す</script>
-    </p>
-    <h>
-      <script>太郎が本を書く</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b48" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書き上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を書かない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b49" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書き上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を上げる</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b50" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書き上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を上げない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b51" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が本を書く</script>
-    </p>
-    <p idx="2">
-      <script>太郎が本を上げる</script>
-    </p>
-    <h>
-      <script>太郎が本を書き上げる</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b52" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終える</script>
-    </p>
-    <h>
-      <script>太郎が歌を歌う</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b53" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終える</script>
-    </p>
-    <h>
-      <script>太郎が歌を歌わない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="yes" inference_type="entailment"
-  jsem_id="b54" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終える</script>
-    </p>
-    <h>
-      <script>太郎が歌を終える</script>
-    </h>
-    <note>「歌い終える」の歌はentity、「終える」の歌はevent</note>
-  </problem>
-
-  <problem answer="no" inference_type="entailment"
-  jsem_id="b55" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が歌を歌い終える</script>
-    </p>
-    <h>
-      <script>太郎が歌を終えない</script>
-    </h>
-    <note></note>
-  </problem>
-
-  <problem answer="unknown" inference_type="entailment"
-  jsem_id="b56" language="jp"
-  phenomena="CompoundVerb">
-    <description>影山1993、補文関係</description>
-    <p idx="1">
-      <script>太郎が歌を歌う</script>
-    </p>
-    <p idx="2">
-      <script>太郎が歌を終える</script>
-    </p>
-    <h>
-      <script>太郎が歌を歌い終える</script>
-    </h>
-    <note>2、太郎が伴奏で参加？「マラソンを走り終える」でやり直す</note>
+    <note>unkでいいのか</note>
   </problem>
 
 </jsem-dataset>
