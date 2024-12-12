@@ -268,7 +268,9 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     -- |
     lightblueMainLocal (Parse output proverName) lr contents = do
       let handle = S.stdout
-          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
+          filterBlacklist = Just $ LEX.createFilterFrom LEX.blacklist
+          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing filterBlacklist noInference verbose
+          -- parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
           prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) Nothing (Just QT.Intuitionistic)
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
           posTagOnly = case output of
@@ -289,7 +291,9 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
             | nSample < 0 = parsedJSeM'
             | otherwise = take nSample parsedJSeM'
           handle = S.stdout
-          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
+          filterBlacklist = Just $ LEX.createFilterFrom LEX.blacklist
+          parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing filterBlacklist noInference verbose
+          -- parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing Nothing noInference verbose
           prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) Nothing (Just QT.Classical)
       S.hPutStrLn handle $ I.headerOf style
       pairs <- forM parsedJSeM'' $ \j -> do
