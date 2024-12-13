@@ -16,7 +16,6 @@ import qualified System.IO as S
 blacklist :: [T.Text]
 blacklist = [
     "泣き叫",
-    "思い描"
     "思い描",
     "語り明か"
     ]
