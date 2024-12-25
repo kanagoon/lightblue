@@ -1237,10 +1237,10 @@ category2type :: Cat -> UDTTpreterm
 category2type ct = case ct of
   SL x y -> Pi (category2type y) (category2type x)
   BS x y -> Pi (category2type y) (category2type x)
-  S _ -> Pi (Pi Entity Type) Top
+  S _ -> Pi (Pi Entity Type) Type
   NP _ -> Entity
-  N   -> Pi Entity (Pi (Pi Entity Type) Top)
-  Sbar _ -> Pi (Pi Entity Type) Top
+  N   -> Pi Entity (Pi (Pi Entity Type) Type)
+  Sbar _ -> Pi (Pi Entity Type) Type
   T _ _ c -> category2type c
   _ -> Unit
 
@@ -1256,7 +1256,7 @@ preterm2prop ct preterm = case ct of
   N -> Sigma Entity (App (App (shiftIndices preterm 1 0) (Var 0)) terminator)
   Sbar _ -> App preterm terminator
   T _ _ c -> preterm2prop c $ transvec c preterm
-  _ -> Unit
+  _ -> Top
 
 -- | receives a node and returns an Sbar node, whose SR is obtained by existentially quantifying all the missing arguments of the SR of a given node.
 wrapNode :: Node -> Node

@@ -23,6 +23,8 @@ import qualified Parser.Language.Japanese.Lexicon as LEX
 import qualified Parser.Language.Japanese.MyLexicon as LEX
 import qualified Parser.Language.Japanese.FilterNodes as LEX
 import qualified Parser.Language.Japanese.Juman.CallJuman as Juman
+import qualified Parser.Language.Japanese.Filter.KNPFilter as Filter
+import qualified Parser.Language.Japanese.Filter.KWJAFilter as Filter
 import Parser.Language (jpOptions)
 import qualified Interface as I
 import qualified Interface.Text as T
@@ -41,7 +43,7 @@ data Options =
   -- Version
   -- | Stat
   -- | Test
-  Options Command I.Style FilePath Juman.MorphAnalyzerName Int Int Int Int Int Bool Bool Bool Bool
+  Options Command I.Style FilePath Juman.MorphAnalyzerName FilterName Int Int Int Int Int Int Bool Bool Bool Bool
     deriving (Show, Eq)
 
 data Command =
@@ -53,6 +55,13 @@ data Command =
   | Stat
   | Test
     deriving (Show, Eq)
+
+data FilterName = KNP | KWJA | NONE deriving (Eq,Show)
+instance Read FilterName where
+  readsPrec _ r =
+    [(KNP,s) | (x,s) <- lex r, map C.toLower x == "knp"]
+    ++ [(KWJA,s) | (x,s) <- lex r, map C.toLower x == "kwja"]
+    ++ [(NONE,s) | (x,s) <- lex r, map C.toLower x == "none"]
 
 --commandReader :: String -> a -> String -> [(a,String)]
 --commandReader r command option = [(command,s) | (x,s) <- lex r, map C.toLower x == option]
@@ -154,6 +163,11 @@ optionParser =
         <> value Juman.KWJA
         <> help "Specify morphological analyzer (default: KWJA)" )
     <*> option auto
+      ( long "filter"
+        <> metavar "knp|kwja|none"
+        <> value NONE
+        <> help "Specify node filter (default: NONE)" )
+    <*> option auto 
       ( long "beam"
       <> short 'b'
       <> help "Specify the beam width"
@@ -186,6 +200,12 @@ optionParser =
       <> help "Set the maximum search depth in proof search"
       <> showDefault
       <> value 9
+      <> metavar "INT" )
+    <*> option auto 
+      ( long "maxtime"
+      <> help "Set the maximum search time in proof search"
+      <> showDefault
+      <> value 100000
       <> metavar "INT" )
     <*> switch 
       ( long "noTypeCheck"
@@ -248,14 +268,22 @@ lightblueMain :: Options -> IO()
 -- lightblueMain Version = showVersion
 -- lightblueMain Stat = showStat
 -- lightblueMain Test = test
-lightblueMain (Options commands style filepath morphaName beamW nParse nTypeCheck nProof maxDepth noTypeCheck noInference iftime verbose) = do
+lightblueMain (Options commands style filepath morphaName filterName beamW nParse nTypeCheck nProof maxDepth maxTime noTypeCheck noInference iftime verbose) = do
   start <- Time.getCurrentTime
   contents <- case filepath of
     "-" -> T.getContents
     _   -> T.readFile filepath
   lexicalResource <- LEX.lexicalResourceBuilder morphaName
+  nodeFilter <- case filterName of
+                  KNP -> do
+                         filter <- Filter.knpFilter $ T.toStrict contents 
+                         return $ Just filter
+                  KWJA -> do
+                          filter <- Filter.kwjaFilter $ T.toStrict contents
+                          return $ Just filter
+                  NONE -> return Nothing
   -- | Main routine
-  lightblueMainLocal commands lexicalResource contents
+  lightblueMainLocal commands lexicalResource nodeFilter contents
   -- | Show execution time
   stop <- Time.getCurrentTime
   let time = Time.diffUTCTime stop start
@@ -266,7 +294,7 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     -- |
     -- | Parse
     -- |
-    lightblueMainLocal (Parse output proverName) lr contents = do
+    lightblueMainLocal (Parse output proverName) lr nodeFilter contents = do
       let handle = S.stdout
           filterBlacklist = Just $ LEX.createFilterFrom LEX.blacklist
           parseSetting = CP.ParseSetting jpOptions lr beamW nParse nTypeCheck nProof True Nothing filterBlacklist noInference verbose
@@ -282,7 +310,7 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     --
     -- | JSeM Parser
     -- 
-    lightblueMainLocal (JSeM proverName jsemID nSample) lr contents = do
+    lightblueMainLocal (JSeM proverName jsemID nSample) lr nodeFilter contents = do
       parsedJSeM <- J.xml2jsemData $ T.toStrict contents
       let parsedJSeM'
             | jsemID == "all" = parsedJSeM
@@ -318,7 +346,7 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     -- |
     -- | Numeration
     -- | 
-    lightblueMainLocal Numeration lr contents = do
+    lightblueMainLocal Numeration lr nodeFilter contents = do
       let handle = S.stdout
           sentences = T.lines contents
       S.hPutStrLn handle $ I.headerOf style
@@ -330,13 +358,13 @@ lightblueMain (Options commands style filepath morphaName beamW nParse nTypeChec
     -- |
     -- | Demo (sequential parsing of a given corpus)
     -- |
-    lightblueMainLocal Demo lr contents = processCorpus lr beamW $ T.lines contents
+    lightblueMainLocal Demo lr _ contents = processCorpus lr beamW $ T.lines contents
     -- |
     -- | Other commands
     -- |
-    lightblueMainLocal Version _ _ = showVersion
-    lightblueMainLocal Stat _ _ = showStat
-    lightblueMainLocal Test _ _ = test
+    lightblueMainLocal Version _ _ _ = showVersion
+    lightblueMainLocal Stat _ _ _ = showStat
+    lightblueMainLocal Test _ _ _ = test
     -- -- |
     -- -- | Debug
     -- -- |
