@@ -20,6 +20,7 @@ import qualified Parser.ChartParser as CP
 import qualified Parser.PartialParsing as CP
 import qualified Parser.Language.Japanese.Lexicon as JLEX
 import qualified Parser.Language.Japanese.MyLexicon as JLEX
+import qualified Parser.Language.Japanese.FilterNodes as JLEX
 import qualified Parser.Language.Japanese.Juman.CallJuman as Juman
 import qualified Parser.Language.Japanese.Filter as JFilter
 import Parser.Language.Japanese.Filter.KNPFilter (knpFilter)    --lightblue
@@ -281,6 +282,7 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
     -- |
     lightblueMainLocal (Parse output) parseSetting contents = do
       let handle = S.stdout
+          filterBlacklist = Just $ JLEX.createFilterFrom JLEX.blacklist
           prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) Nothing (Just QT.Intuitionistic)
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
           posTagOnly = case output of 

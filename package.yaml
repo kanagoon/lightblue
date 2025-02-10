@@ -60,6 +60,7 @@ library:
   - Parser.Language.Japanese.Lexicon
   - Parser.Language.Japanese.MyLexicon
   - Parser.Language.Japanese.Templates
+  - Parser.Language.Japanese.FilterNodes
   - Parser.Language.Japanese.Juman.CallJuman
   - Parser.Language.Japanese.Juman.Config
   - Parser.Language.Japanese.Juman.ParseJumanDic
