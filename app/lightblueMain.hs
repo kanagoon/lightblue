@@ -23,6 +23,7 @@ import qualified Parser.Language.Japanese.MyLexicon as JLEX
 import qualified Parser.Language.Japanese.FilterNodes as JLEX
 import qualified Parser.Language.Japanese.Juman.CallJuman as Juman
 import qualified Parser.Language.Japanese.Filter as JFilter
+import Parser.Language.Japanese.FilterNodes (blacklistFilter)
 import Parser.Language.Japanese.Filter.KNPFilter (knpFilter)    --lightblue
 import Parser.Language.Japanese.Filter.KWJAFilter (kwjaFilter)  --lightblue
 import qualified Parser.Language.English.Lexicon as ELEX
@@ -257,10 +258,13 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
                         baseLexicon = JLEX.myLexicon
                         , jumanDic = jumanDicData
                         , morphaName = morphaName
+                        -- nodeFilterBuilder :: T.Text -> IO JFilter.Filter -- ^ filter for CCG nodes
+                        -- Filter :: Int -> Int -> [CCG.Node] -> [CCG.Node]
                         , nodeFilterBuilder = case filterName of
                                                 JFilter.KNP  -> knpFilter
                                                 JFilter.KWJA -> kwjaFilter
-                                                JFilter.NONE -> \_ -> return (\_ _ -> id)
+                                                JFilter.NONE -> \_ -> blacklistFilter
+                                                  -- return (\_ _ -> id)
                         }
                    EN -> return defaultEnOptions
   contents <- case filepath of
