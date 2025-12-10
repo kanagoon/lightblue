@@ -54,7 +54,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b05" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -67,7 +67,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b06" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -80,7 +80,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b07" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -93,7 +93,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b08" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -190,7 +190,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b15" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -203,7 +203,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b16" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、並列関係</description>
@@ -326,7 +326,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b25" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -339,7 +339,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b26" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -352,7 +352,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b27" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -365,7 +365,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b28" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -462,7 +462,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b35" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -475,7 +475,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b36" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -488,7 +488,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b37" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -501,7 +501,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b38" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -556,7 +556,7 @@
     <h>
       <script>太郎が服を洗う</script>
     </h>
-    <note></note>
+    <note>Isono(2022)でもこれはyesとして導ける。洗うの目的語として「汚れ」を取るが、現象として服を洗わずに汚れを洗うことができない。服の汚れを洗ったのであれば、服も洗ったことになる</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -569,7 +569,7 @@
     <h>
       <script>太郎が服を洗わない</script>
     </h>
-    <note></note>
+    <note>服を洗うことで汚れを落としているが、服を洗わないなら汚れを洗い落とすことができない</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
@@ -582,7 +582,7 @@
     <h>
       <script>太郎が汚れを落とす</script>
     </h>
-    <note></note>
+    <note>汚れを、服を拭うことで落としている場合も考えられるので、unkになるのではないか？</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -608,7 +608,7 @@
     <h>
       <script>太郎が汚れを洗う</script>
     </h>
-    <note>判断が分かれる</note>
+    <note>判断が分かれる→Isono(2022)では、V1, V2の目的語として、glueでθ同定した「汚れ」を取ると主張(10/20のゼミ)</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -621,10 +621,10 @@
     <h>
       <script>太郎が汚れを洗わない</script>
     </h>
-    <note>判断が分かれる</note>
+    <note>判断が分かれる→Isono(2022)では、V1, V2の目的語として、glueでθ同定した「汚れ」を取ると主張(10/20のゼミ)</note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b47" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -637,7 +637,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b48" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -650,7 +650,7 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b49" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -663,7 +663,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b50" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -676,20 +676,20 @@
     <note></note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b51" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
       <script>太郎が服の汚れを洗い落とさない</script>
-    </p>
+    </p>c
     <h>
       <script>太郎が汚れを洗う</script>
     </h>
-    <note>判断が分かれる</note>
+    <note>判断が分かれる→Isono(2022)では、V1, V2の目的語として、glueでθ同定した「汚れ」を取ると主張(10/20のゼミ)。</note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b52" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -699,7 +699,7 @@
     <h>
       <script>太郎が汚れを落とさない</script>
     </h>
-    <note>判断が分かれる</note>
+    <note>判断が分かれる→Isono(2022)では、V1, V2の目的語として、glueでθ同定した「汚れ」を取ると主張(10/20のゼミ)。</note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
@@ -715,7 +715,7 @@
     <h>
       <script>太郎が服の汚れを洗い落とす</script>
     </h>
-    <note></note>
+    <note>この前提の書き方だと、この服の汚れなのか特定できない。</note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
@@ -731,7 +731,7 @@
     <h>
       <script>太郎が服の汚れを洗い落とさない</script>
     </h>
-    <note>TODO</note>
+    <note>この前提の書き方だと、この服の汚れなのか特定できない。</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
@@ -744,7 +744,7 @@
     <h>
       <script>太郎がビンを振る</script>
     </h>
-    <note></note>
+    <note>ビンを振ることで中身を混ぜているのだから、現象として当然中身も混ざることになる</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -757,10 +757,10 @@
     <h>
       <script>太郎がビンを振らない</script>
     </h>
-    <note></note>
+    <note>ビンを振ることで中身を混ぜるから、ビンを振らないなら中身も混ざらない。</note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b57" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -770,7 +770,7 @@
     <h>
       <script>太郎が中身を混ぜる</script>
     </h>
-    <note></note>
+    <note>ビンを振ることで中身を混ぜるのが前提。仮説では、ビンの中身をスプーンで混ぜているのかもしれない。</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -783,7 +783,7 @@
     <h>
       <script>太郎が中身を混ぜない</script>
     </h>
-    <note></note>
+    <note>中身を混ぜていないので、ビンも振っていない。</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
@@ -796,7 +796,7 @@
     <h>
       <script>太郎が中身を振る</script>
     </h>
-    <note></note>
+    <note>中身を振ろうを思ったら、ビンも振らざるを得ない</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -809,10 +809,10 @@
     <h>
       <script>太郎が中身を振らない</script>
     </h>
-    <note></note>
+    <note>中身を振っていないので、ビンそのものも振り混ぜていない</note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b61" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -826,7 +826,7 @@
     ビンを混ぜることは中身を混ぜることにもなる。複合語の問題ではない。</note>
   </problem>
 
-  <problem answer="no" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b62" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -836,7 +836,7 @@
     <h>
       <script>太郎がビンを混ぜない</script>
     </h>
-    <note>保留</note>
+    <note>保留→上記と同様の理由でunk。ビンの順番を変えなかっただけで、中身をスプーンで混ぜた可能性がある</note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
@@ -852,7 +852,7 @@
     <h>
       <script>太郎がビンの中身を振り混ぜる</script>
     </h>
-    <note>保留</note>
+    <note>保留→この前提だと、ビンと中身に所有関係があることがわからない。また、1つのイベントであることが表現できないのでunk</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
