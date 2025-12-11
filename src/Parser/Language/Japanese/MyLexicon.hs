@@ -955,5 +955,6 @@ myLexicon = concat $ [
   verblex ["思","おも"] "Sakuma" [V5w] [Stem] "思う/おもう" "ガヲ" event,
   verblex ["描","えが"] "Sakuma" [V5k] [Stem] "描く/えがく" "ガヲ" event,
   verblex ["振","ふ"] "Sakuma" [V5r] [Stem] "振る/ふる" "ガヲ" event,
-  verblex ["明か","あか"] "Sakuma" [V5s] [Stem] "明かす/あかす" "ガヲ" event
+  verblex ["明か","あか"] "Sakuma" [V5s] [Stem] "明かす/あかす" "ガヲ" event,
+  verblex ["叫","さけ"] "Sakuma" [V5b] [Stem] "叫ぶ/さけぶ" "ガ" event
   ]
