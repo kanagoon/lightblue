@@ -21,4 +21,3 @@ tools/
 src/.ftpconfig
 stack.yaml.lock
 config.yaml
-.env

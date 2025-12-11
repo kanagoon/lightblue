@@ -62,7 +62,7 @@ type ConName = LazyT.Text
 data Preterm = 
   -- | Basic Preterms
   Var Int                       -- ^ Variables
-  | Con ConName                 -- ^ Constant symbols
+  | Con LazyT.Text                  -- ^ Constant symbols
   | Type                        -- ^ The sort \"type\"
   | Kind                        -- ^ The sort \"kind\"
   -- | Pi Types
