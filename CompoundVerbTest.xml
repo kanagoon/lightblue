@@ -394,7 +394,7 @@
     <note></note>
   </problem>
 
-  <problem answer="yes" inference_type="entailment"
+  <problem answer="unknown" inference_type="entailment"
   jsem_id="b30" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV2の項構造と等しい）</description>
@@ -697,7 +697,7 @@
       <script>太郎が服の汚れを洗い落とさない</script>
     </p>
     <h>
-      <script>太郎が汚れを落とさない</script>
+      <script>太郎が汚れを洗わない</script>
     </h>
     <note>判断が分かれる→Isono(2022)では、V1, V2の目的語として、glueでθ同定した「汚れ」を取ると主張(10/20のゼミ)。</note>
   </problem>
@@ -817,13 +817,12 @@
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜる</script>
+      <script>太郎がビンの中身を振り混ぜない</script>
     </p>
     <h>
-      <script>太郎がビンを混ぜる</script>
+      <script>太郎がビンを振る</script>
     </h>
-    <note>先生はunk、「ビンを混ぜる」はおかしくないが、ビンが複数あって、順番を変えたという意味。ビンの中身ではない。コアーション。判断が分かれる。
-    ビンを混ぜることは中身を混ぜることにもなる。複合語の問題ではない。</note>
+    <note></note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
@@ -831,16 +830,68 @@
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
-      <script>太郎がビンの中身を振り混ぜる</script>
+      <script>太郎がビンの中身を振り混ぜない</script>
     </p>
     <h>
-      <script>太郎がビンを混ぜない</script>
+      <script>太郎がビンを振らない</script>
     </h>
-    <note>保留→上記と同様の理由でunk。ビンの順番を変えなかっただけで、中身をスプーンで混ぜた可能性がある</note>
+    <note></note>
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
   jsem_id="b63" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜない</script>
+    </p>
+    <h>
+      <script>太郎が中身を混ぜる</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b64" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜない</script>
+    </p>
+    <h>
+      <script>太郎が中身を混ぜない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b65" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜない</script>
+    </p>
+    <h>
+      <script>太郎が中身を振る</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b66" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
+    <p idx="1">
+      <script>太郎がビンの中身を振り混ぜない</script>
+    </p>
+    <h>
+      <script>太郎が中身を振らない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b67" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
     <p idx="1">
@@ -852,11 +903,27 @@
     <h>
       <script>太郎がビンの中身を振り混ぜる</script>
     </h>
-    <note>保留→この前提だと、ビンと中身に所有関係があることがわからない。また、1つのイベントであることが表現できないのでunk</note>
+    <note>この前提だと、ビンと中身に所有関係があることがわからない。また、1つのイベントであることが表現できないのでunk</note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b68" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
+    <p idx="1">
+      <script>太郎がビンを振らない</script>
+    </p>
+    <p idx="2">
+      <script>太郎が中身を混ぜない</script>
+    </p>
+    <h>
+      <script>太郎がビンの中身を振り混ぜない</script>
+    </h>
+    <note>この前提だと、ビンと中身に所有関係があることがわからない。また、1つのイベントであることが表現できないのでunk</note>
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b64" language="jp"
+  jsem_id="b69" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -869,7 +936,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b65" language="jp"
+  jsem_id="b70" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -882,7 +949,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b66" language="jp"
+  jsem_id="b71" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -895,7 +962,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b67" language="jp"
+  jsem_id="b72" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -908,7 +975,59 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b68" language="jp"
+  jsem_id="b73" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩かない</script>
+    </p>
+    <h>
+      <script>太郎が酒を飲む</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b74" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩かない</script>
+    </p>
+    <h>
+      <script>太郎が酒を飲まない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b75" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩かない</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を歩く</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b76" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夜の街を酒を飲み歩かない</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を歩かない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b77" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -923,8 +1042,24 @@
     <note></note>
   </problem>
 
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b78" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が酒を飲まない</script>
+    </p>
+    <p idx="2">
+      <script>太郎が夜の街を歩かない</script>
+    </p>
+    <h>
+      <script>太郎が夜の街を酒を飲み歩かない</script>
+    </h>
+    <note></note>
+  </problem>
+
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b69" language="jp"
+  jsem_id="b79" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -937,7 +1072,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b70" language="jp"
+  jsem_id="b80" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -950,7 +1085,7 @@
   </problem>
 
   <problem answer="yes" inference_type="entailment"
-  jsem_id="b71" language="jp"
+  jsem_id="b81" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -963,7 +1098,7 @@
   </problem>
 
   <problem answer="no" inference_type="entailment"
-  jsem_id="b72" language="jp"
+  jsem_id="b82" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -976,7 +1111,59 @@
   </problem>
 
   <problem answer="unknown" inference_type="entailment"
-  jsem_id="b73" language="jp"
+  jsem_id="b83" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かさない</script>
+    </p>
+    <h>
+      <script>太郎が思い出を語る</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b84" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かさない</script>
+    </p>
+    <h>
+      <script>太郎が思い出を語らない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b85" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かさない</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を明かす</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b86" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が夏の一夜を思い出を語り明かさない</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を明かさない</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b87" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
     <p idx="1">
@@ -987,6 +1174,22 @@
     </p>
     <h>
       <script>太郎が夏の一夜を思い出を語り明かす</script>
+    </h>
+    <note></note>
+  </problem>
+
+  <problem answer="unknown" inference_type="entailment"
+  jsem_id="b88" language="jp"
+  phenomena="CompoundVerb">
+    <description>影山1993、右側主要部の関係（全体の項構造がV1とV2の両方から受け継がれる）</description>
+    <p idx="1">
+      <script>太郎が思い出を語らない</script>
+    </p>
+    <p idx="2">
+      <script>太郎が夏の一夜を明かさない</script>
+    </p>
+    <h>
+      <script>太郎が夏の一夜を思い出を語り明かさない</script>
     </h>
     <note></note>
   </problem>
