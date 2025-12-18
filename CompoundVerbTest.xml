@@ -582,7 +582,7 @@
     <h>
       <script>太郎が汚れを落とす</script>
     </h>
-    <note>汚れを、服を拭うことで落としている場合も考えられるので、unkになるのではないか？</note>
+    <note></note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
@@ -760,7 +760,7 @@
     <note>ビンを振ることで中身を混ぜるから、ビンを振らないなら中身も混ざらない。</note>
   </problem>
 
-  <problem answer="unknown" inference_type="entailment"
+  <problem answer="yes" inference_type="entailment"
   jsem_id="b57" language="jp"
   phenomena="CompoundVerb">
     <description>影山1993、右側主要部の関係（V1とV2の内部引数は所有関係を持つ）</description>
@@ -770,7 +770,7 @@
     <h>
       <script>太郎が中身を混ぜる</script>
     </h>
-    <note>ビンを振ることで中身を混ぜるのが前提。仮説では、ビンの中身をスプーンで混ぜているのかもしれない。</note>
+    <note>ビンを振ることで中身を混ぜているのだから、現象として当然中身も混ざることになる</note>
   </problem>
 
   <problem answer="no" inference_type="entailment"
