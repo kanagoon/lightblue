@@ -123,11 +123,9 @@ subgoalToGoalWithAntecedents results (WB.SubGoal goal substLst (pos,res)) depth 
       goalWithClue = 
         maybe
           (M.Just goal)
-          (\(before,after) -> 
-            let clueLst = L.nub $ filter ((A.aVar (-1) ==) . fst) (map (\(fst_,snd_) ->(A.betaReduce $ A.arrowNotat fst_,A.betaReduce $ A.arrowNotat snd_) ) $ A.canBeSame' 0 before after)
-                justMyTerm = if length clueLst == 1 then M.Just (snd $ head clueLst) else M.Nothing
-            in case goal of
-              WB.Goal sig var M.Nothing proofTypes -> maybe ((if depth < WB.debug setting then debugLog goal depth setting (T.pack ("remove this goal due to the clue " ++ (show clueLst) ++ " : ")) else id) (M.Nothing)) (\myTerm -> let newGoal = WB.Goal sig var (M.Just myTerm) proofTypes in (if depth < WB.debug setting then debugLog newGoal depth setting (T.pack ("update" ++ (show goal) ++  " with clue " ++ (show (pos,res)) ++ " : ")) else id) (M.Just newGoal)) justMyTerm
+          (\clueWithResult -> 
+            case goal of
+              WB.Goal sig var M.Nothing proofTypes -> (let newGoal = WB.Goal sig var (M.Just clueWithResult) proofTypes in (if depth < WB.debug setting then debugLog newGoal depth setting (T.pack ("update" ++ (show goal) ++  " with clue " ++ (show (pos,res)) ++ " : ")) else id) (M.Just newGoal)) 
               WB.Goal sig var _ proofTypes -> (if depth < WB.debug setting then D.trace ("it already has a term so I won't update the term with clue") else id) (M.Just goal)
           )
           res
@@ -159,7 +157,10 @@ deduceWithSubGoalset (WB.SubGoalSet rule maybeTree subgoals dSide) depth setting
     let deduceWithAntecedentsAndSubGoal subgoal results= 
             case subgoalToGoalWithAntecedents results subgoal depth setting of
                 M.Just goal -> 
-                    deduce' goal depth setting >>= \newResult -> return (map (\tree -> (newResult{WB.trees = [tree]}):results) (L.nub $ WB.trees newResult))
+                    let disjUsed = if rule /= QT.DisjE then [] else (maybe [] (\tree -> [A.typefromAJudgment $ A.downSide' tree]) maybeTree)
+                        setting' = setting{WB.sStatus = (WB.sStatus setting){WB.usedDisJoint = disjUsed++(WB.usedDisJoint$WB.sStatus setting)}}
+                    in 
+                    deduce' goal depth setting' >>= \newResult -> return (map (\tree -> (newResult{WB.trees = [tree]}):results) (L.nub $ WB.trees newResult))
                 M.Nothing -> return []
         -- deduceWithAntecedentsetAndSubGoal :: IO [[WB.Result]] -> Subgoal -> IO [[WB.Result]]
         deduceWithAntecedentsetAndSubGoal resultsetIOs subgoal = resultsetIOs >>= \resultset -> foldMap (deduceWithAntecedentsAndSubGoal subgoal) resultset
@@ -275,4 +276,4 @@ deduce' goal depth setting
 deduce :: WB.DeduceRule
 deduce sig var arrowType depth setting = 
   deduce' (WB.Goal sig var M.Nothing [arrowType]) depth setting
-    >>= \result ->  (if depth < WB.debug setting then (D.trace ("result :" ++ (show result))) else id ) (return result)
+    >>= \result ->  (if depth < WB.debug setting then (D.trace ("result :" ++ (show result))) else id ) (return result) -- (if {--depth < WB.debug setting--} not (null (WB.trees result) )then (D.trace ("result :" ++ (show (map (A.downSide') $ WB.trees result)))) else D.trace "not found" ) (return result)

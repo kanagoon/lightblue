@@ -34,6 +34,7 @@ import qualified Interface as I
 import qualified System.Environment as Env
 import qualified Interface.Text as T
 import qualified Interface.HTML as I
+import qualified Interface.PrintParseResult as PPR
 import qualified JSeM as J
 import qualified JSeM.XML as J
 import qualified DTS.UDTTdeBruijn as UDTT
@@ -311,7 +312,10 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
     -- |
     lightblueMainLocal (Parse output) parseSetting contents = do
       let handle = S.stdout
-          prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) Nothing (Just QT.Intuitionistic) False
+          prover = NLI.getProver proverName $ QT.defaultProofSearchSetting {
+            QT.maxDepth = (Just maxDepth),
+            QT.maxTime = (Just maxTime)
+            }
           parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] $ T.lines contents
           posTagOnly = case output of
                          I.TREE -> False
@@ -332,7 +336,7 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
             Nothing             -> return ()
         _ -> return ()
       S.hPutStrLn handle $ I.headerOf style
-      NLI.printParseResult handle style 1 noTypeCheck posTagOnly "input" parseResult
+      PPR.printParseResult handle style 1 noTypeCheck posTagOnly "input" parseResult
       S.hPutStrLn handle $ I.footerOf style
     --
     -- | JSeM command
@@ -346,7 +350,10 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
             | nSample < 0 = parsedJSeM'
             | otherwise = take nSample parsedJSeM'
           handle = S.stdout
-          prover = NLI.getProver proverName $ QT.ProofSearchSetting (Just maxDepth) (Just maxTime) (Just QT.Intuitionistic) False
+          prover = NLI.getProver proverName $ QT.defaultProofSearchSetting {
+            QT.maxDepth = Just maxDepth,
+            QT.maxTime = Just maxTime
+            }
       S.hPutStrLn handle $ I.headerOf style
       pairs <- forM parsedJSeM'' $ \j -> do
         let title = "JSeM-ID " ++ (StrictT.unpack $ J.jsem_id j)
@@ -357,7 +364,7 @@ lightblueMain (Options lang commands style proverName filepath beamW nParse nTyp
         S.putStr "\n"
         let sentences = postpend (map T.fromStrict $ J.premises j) (T.fromStrict $ J.hypothesis j)
             parseResult = NLI.parseWithTypeCheck parseSetting prover [("dummy",DTT.Entity)] [] sentences
-        NLI.printParseResult handle style 1 noTypeCheck False title parseResult
+        PPR.printParseResult handle style 1 noTypeCheck False title parseResult
         inferenceLabels <- toList $ NLI.trawlParseResult parseResult
         let groundTruth = J.jsemLabel2YesNo $ J.answer j
             prediction = case inferenceLabels of
@@ -460,7 +467,7 @@ test = do
       termM = UDTT.Sigma UDTT.Entity (UDTT.App (UDTT.Con "f") (UDTT.Var 0))
       typeA = DTT.Type
       tcq = UDTT.Judgment signature context termM typeA
-      prover = NLI.getProver NLI.Wani $ QT.ProofSearchSetting Nothing Nothing (Just QT.Intuitionistic) False
+      prover = NLI.getProver NLI.Wani QT.defaultProofSearchSetting
   typeCheckResults <- toList $ typeCheck prover False tcq
   T.putStrLn $ I.startMathML
   T.putStrLn $ I.toMathML $ DTTwN.fromDeBruijnSignature signature

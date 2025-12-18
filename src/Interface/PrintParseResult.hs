@@ -26,7 +26,7 @@ import Interface.Text                          --lightblue
 import Interface.TeX                           --lightblue
 import qualified Interface.Express.Express as Express
 import qualified Parser.CCG as CCG             --lightblue
-import DTS.NaturalLanguageInference            --lightblue
+import DTS.NaturalLanguageInference hiding (printParseResult)
 import qualified DTS.UDTTwithName as UDTTwN    --lightblue
 import qualified DTS.DTTwithName as DTTwN      --lightblue
 
